@@ -9,7 +9,7 @@ import { fadeInOut } from "@/lib/utils";
 const AboutUs = () => {
   return (
     <>
-      <main className="w-screen h-full overflow-hidden">
+      <main className="w-full h-full overflow-hidden">
         <Hero />
         <Story />
         <Business />
