@@ -56,7 +56,7 @@ const MobileNav = () => {
         <SheetTrigger asChild>
           <div
             onClick={handleMenuClick}
-            className="border border-black rounded-sm"
+            className="border border-black rounded-sm animate-slide-down"
           >
             <Hamburger
               toggled={isOpen}

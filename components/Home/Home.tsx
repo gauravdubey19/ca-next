@@ -8,7 +8,7 @@ import Article from "./Article";
 
 const Home = () => {
   return (
-    <main className="">
+    <main className="w-full h-full">
       <Hero />
       <Service />
       <About />
