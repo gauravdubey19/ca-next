@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Arimo } from "next/font/google";
+import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
-const inter = Inter({ subsets: ["latin"] });
+const arimo = Arimo({
+  subsets: ["latin"],
+  weight: "400",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={arimo.className}>
+        <Navbar />
+        {children}
+        <ScrollToTop />
+        <Footer companyName="LOGO" />
+      </body>
     </html>
   );
 }
