@@ -15,7 +15,7 @@ const Article = () => {
   return (
     <section
       ref={ref}
-      className="w-full min-h-screen flex items-center justify-center bg-white overflow-hidden"
+      className="w-full h-fit flex items-center justify-center bg-white  p-4 lg:px-[120px] overflow-hidden"
     >
       <div className="w-full max-w-screen flex flex-col gap-4 md:gap-5 items-center p-4 md:px-8 py-16">
         <motion.p
@@ -31,11 +31,11 @@ const Article = () => {
           variants={fadeInOut("down", "tween", 0.2, 0.8)}
           initial="hidden"
           animate={isInView ? "show" : "exit"}
-          className="text-center text-2xl md:text-4xl font-extrabold text-white"
+          className="text-center text-2xl md:text-4xl font-extrabold"
         >
-          Consultant tax is built for small businesses.
+          Our Service is built specifically for your businesses.
         </motion.h2>
-        <div className="w-full grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="w-full grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-5 lg:mt-8">
           {articles.map((article, index) => (
             <motion.div
               variants={fadeInOut("left", "tween", 0.2, 0.5 * index)}

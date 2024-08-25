@@ -1,10 +1,16 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { PiHandshakeLight } from "react-icons/pi";
 import { fadeInOut } from "@/lib/utils";
+import { AnimatedTooltip } from "../ui/animated-tooltip";
+import { PiHandshakeLight } from "react-icons/pi";
+import {
+  SlSocialLinkedin,
+  SlSocialFacebook,
+  SlSocialInstagram,
+} from "react-icons/sl";
 
 const AboutUs = () => {
   return (
@@ -14,6 +20,7 @@ const AboutUs = () => {
         <Story />
         <Business />
         {/* <Success /> */}
+        <OurTeam />
       </main>
     </>
   );
@@ -26,9 +33,9 @@ const Hero = () => {
   const isInView = useInView(ref, { amount: 0.3 });
   return (
     <>
-      <div
+      <section
         ref={ref}
-        className="relative w-full h-fit flex flex-col gap-10 p-4 lg:px-[120px] lg:py-[100px]"
+        className="relative w-full h-fit flex flex-col gap-10 p-4 lg:px-[120px] lg:py-[100px] overflow-hidden"
       >
         <div className="absolute inset-0 -z-10 w-full h-[30vh] md:h-[50vh] lg:h-[calc(100vh-83px)] bg-[#E7E8F4]"></div>
         <div className="w-full h-fit lg:h-[170px]">
@@ -44,7 +51,7 @@ const Hero = () => {
             variants={fadeInOut("down", "tween", 0.2, 0.8)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit mt-2 text-center text-xl lg:text-[60px] text-[#161540] text-balance font-extrabold leading-2 lg:leading-[65px]"
+            className="w-full h-fit mt-2 text-center text-2xl md:text-4xl lg:text-[60px] text-[#161540] text-balance font-extrabold leading-2 lg:leading-[65px]"
           >
             We{"’"}re making work meaningful for everyone, everywhere.
           </motion.p>
@@ -65,7 +72,7 @@ const Hero = () => {
             className="w-full h-full object-cover"
           />
         </motion.div>
-      </div>
+      </section>
     </>
   );
 };
@@ -75,9 +82,9 @@ const Story = () => {
   const isInView = useInView(ref, { amount: 0.3 });
   return (
     <>
-      <div
+      <section
         ref={ref}
-        className="w-full h-fit space-y-4 md:space-y-6 p-4 lg:px-[120px] lg:py-10"
+        className="w-full h-fit space-y-4 md:space-y-6 p-4 lg:px-[120px] lg:py-10 overflow-hidden"
       >
         <motion.h2
           variants={fadeInOut("down", "tween", 0.2, 0.5)}
@@ -153,7 +160,7 @@ const Story = () => {
             Gujarat, Rajasthan, and in exceptional cases in Haryana and Punjab.
           </p>
         </motion.div>
-      </div>
+      </section>
     </>
   );
 };
@@ -162,9 +169,9 @@ const Business = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
   return (
-    <div
+    <section
       ref={ref}
-      className="w-full h-screen flex-between flex-col lg:flex-row gap-4 md:gap-8 lg:gap-10 space-y-4 md:space-y-6 p-4 lg:px-[120px] lg:py-10 overflow-hidden"
+      className="w-full h-fit flex-between flex-col lg:flex-row gap-4 md:gap-8 lg:gap-10 bg-[#E7E8F4] space-y-4 md:space-y-6 p-4 lg:px-[120px] lg:py-10 overflow-hidden"
     >
       <motion.div
         variants={fadeInOut("right", "tween", 0.2, 0.5)}
@@ -182,63 +189,262 @@ const Business = () => {
           className="w-full h-full object-cover"
         />
       </motion.div>
-      <div className="w-full h-full flex-1 space-y-4">
+      <div className="w-full h-full flex-1 space-y-4 md:space-y-8 lg:space-y-10">
         <motion.p
           variants={fadeInOut("left", "tween", 0.2, 0.5)}
           initial="hidden"
           animate={isInView ? "show" : "exit"}
-          className="w-fit flex-center rounded-full bg-[#E7E8F4] text-sm md:text-lg font-light shadow-lg line-clamp-1 px-5 py-2 overflow-hidden"
+          className="w-fit flex-center rounded-full bg-white/70 text-sm md:text-lg font-light shadow-lg line-clamp-1 px-5 py-2 overflow-hidden"
         >
-          {/* <PiHandshakeLight size={20} className="mr-1" /> */}
-          We{"'"}ve been providing exceptional business services since 2000.
+          <PiHandshakeLight size={20} className="mr-1" />
+          We doing exceptional business since 2000.
+          {/* We{"'"}ve been providing exceptional business services since 2000. */}
         </motion.p>
-        <motion.p
-          variants={fadeInOut("left", "tween", 0.2, 0.8)}
-          initial="hidden"
-          animate={isInView ? "show" : "exit"}
-          className="w-full h-fit text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black leading-10 tracking-wide"
-        >
-          About Our Company
-        </motion.p>
-        <motion.p
-          variants={fadeInOut("left", "tween", 0.2, 1)}
-          initial="hidden"
-          animate={isInView ? "show" : "exit"}
-          className="w-full h-fit text-sm md:text-md lg:text-lg text-balance text-justify"
-        >
-          The firm {'"PATEL & GUPTA, Chartered Accountants"'} was incorporated
-          in the year 2000 as a partnership firm with four partners. Our vision
-          is to provide quality professional services with greater accuracy and
-          transparency through our multi-location branches spread across states.
-        </motion.p>
-        <motion.p
-          variants={fadeInOut("left", "tween", 0.2, 1.2)}
-          initial="hidden"
-          animate={isInView ? "show" : "exit"}
-          className="w-full h-fit text-sm md:text-md lg:text-lg text-balance text-justify"
-        >
-          We are also engaged in providing financial assistance from banks and
-          financial institutions through various loan options including Term
-          Loans, Short-term and Long-term Working Capital Loans, Mortgage Loans,
-          Unsecured Loans, Heavy Equipment/Machinery Loans, Export Credit, LC,
-          and Bank Guarantee Facilities, tailored to meet the specific needs of
-          our clients.
-        </motion.p>
-        <motion.p
-          variants={fadeInOut("left", "tween", 0.2, 1.5)}
-          initial="hidden"
-          animate={isInView ? "show" : "exit"}
-          className="w-full h-fit text-sm md:text-md lg:text-lg text-balance text-justify"
-        >
-          Our firm has previously been engaged for field audit and documentation
-          on behalf of Standard Chartered Bank for their Supply Chain Finance
-          product under Dealer Financing Flexiloan in M.P., Gujarat, Rajasthan,
-          and in exceptional cases, Haryana and Punjab.
-        </motion.p>
+        <div className="space-y-4 md:space-y-6">
+          <motion.p
+            variants={fadeInOut("left", "tween", 0.2, 0.8)}
+            initial="hidden"
+            animate={isInView ? "show" : "exit"}
+            className="w-full h-fit text-xl sm:text-2xl md:text-4xl lg:text-5xl font-black leading-10 tracking-wide"
+          >
+            About Our Company
+          </motion.p>
+          <div className="space-y-2 md:space-y-4">
+            <motion.p
+              variants={fadeInOut("left", "tween", 0.2, 1)}
+              initial="hidden"
+              animate={isInView ? "show" : "exit"}
+              className="w-full h-fit text-sm md:text-md lg:text-lg text-balance text-justify"
+            >
+              The firm {'"PATEL & GUPTA, Chartered Accountants"'} was
+              incorporated in the year 2000 as a partnership firm with four
+              partners. Our vision is to provide quality professional services
+              with greater accuracy and transparency through our multi-location
+              branches spread across states.
+            </motion.p>
+            <motion.p
+              variants={fadeInOut("left", "tween", 0.2, 1.2)}
+              initial="hidden"
+              animate={isInView ? "show" : "exit"}
+              className="w-full h-fit text-sm md:text-md lg:text-lg text-balance text-justify"
+            >
+              We are also engaged in providing financial assistance from banks
+              and financial institutions through various loan options including
+              Term Loans, Short-term and Long-term Working Capital Loans,
+              Mortgage Loans, Unsecured Loans, Heavy Equipment/Machinery Loans,
+              Export Credit, LC, and Bank Guarantee Facilities, tailored to meet
+              the specific needs of our clients.
+            </motion.p>
+            <motion.p
+              variants={fadeInOut("left", "tween", 0.2, 1.5)}
+              initial="hidden"
+              animate={isInView ? "show" : "exit"}
+              className="w-full h-fit text-sm md:text-md lg:text-lg text-balance text-justify"
+            >
+              Our firm has previously been engaged for field audit and
+              documentation on behalf of Standard Chartered Bank for their
+              Supply Chain Finance product under Dealer Financing Flexiloan in
+              M.P., Gujarat, Rajasthan, and in exceptional cases, Haryana and
+              Punjab.
+            </motion.p>
+          </div>
+        </div>
       </div>
+    </section>
+  );
+};
+
+interface SocialLink {
+  id: number;
+  label: string;
+  href: string;
+  icon: React.ReactNode;
+}
+
+interface CardData {
+  id: number;
+  name: string;
+  description: string;
+  img: string;
+  social: SocialLink[];
+}
+
+interface CardProps {
+  card: CardData;
+}
+
+const OurTeam: React.FC = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.3 });
+
+  return (
+    <section
+      ref={ref}
+      className="w-full h-fit flex items-center flex-col space-y-4 md:space-y-6 p-4 lg:px-[120px] lg:py-14 overflow-hidden"
+    >
+      <motion.p
+        variants={fadeInOut("down", "tween", 0.2, 0.5)}
+        initial="hidden"
+        animate={isInView ? "show" : "exit"}
+        className="w-fit h-fit flex-center rounded-full bg-[#E7E8F4] text-sm md:text-lg font-light shadow-lg px-5 py-3 text-center"
+      >
+        <PiHandshakeLight size={20} className="mr-1" />
+        We{"'"}re Doing Exceptional Business Since 2000.
+      </motion.p>
+      <motion.div
+        variants={fadeInOut("down", "tween", 0.2, 0.8)}
+        initial="hidden"
+        animate={isInView ? "show" : "exit"}
+        className="w-full md:w-[35%] text-center text-4xl font-extrabold"
+      >
+        Our Team
+      </motion.div>
+      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-2">
+        {ourTeam.map((card) => (
+          <motion.div
+            key={card.id}
+            variants={fadeInOut("up", "tween", 0.2, 0.5 * card.id)}
+            initial="hidden"
+            animate={isInView ? "show" : "exit"}
+          >
+            <Card card={card} />
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const Card: React.FC<CardProps> = ({ card }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  return (
+    <div
+      className="relative w-full h-[300px] md:h-[350px] lg:h-[400px] perspective"
+      onMouseEnter={() => setIsFlipped(true)}
+      onMouseLeave={() => setIsFlipped(false)}
+    >
+      <motion.div
+        className={`absolute w-full h-full transform-style-preserve-3d transition-transform duration-500 rounded-xl shadow-xl ${
+          isFlipped ? "rotateY-180" : ""
+        }`}
+      >
+        <motion.div className="absolute w-full h-full backface-hidden">
+          <div className="h-[70%] w-full rounded-t-xl overflow-hidden">
+            <Image
+              src={card.img}
+              alt={`Team profile of ${card.name}`}
+              width={400}
+              height={300}
+              className="w-full h-full"
+            />
+          </div>
+          <div className="h-[30%] w-full flex-center flex-col p-2 bg-white rounded-b-xl">
+            <h3 className="text-md md:text-lg text-center font-bold">
+              {card.name}
+            </h3>
+          </div>
+        </motion.div>
+        <motion.div className="absolute w-full h-full bg-[#E7E8F4] text-center flex flex-col items-center justify-center p-4 rounded-xl backface-hidden rotateY-180">
+          <p className="mb-4">{card.description}</p>
+          <div className="flex flex-wrap gap-6 md:gap-4 lg:gap-2">
+            <AnimatedTooltip items={card.social} />
+          </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
+
+const ourTeam: CardData[] = [
+  {
+    id: 1,
+    name: "C.A. SATISH PATEL",
+    description:
+      "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
+    img: "/assets/ca_satish_patel.jpg",
+    social: [
+      {
+        id: 1,
+        label: "LinkedIn",
+        href: "/about-us#",
+        icon: <SlSocialLinkedin size={25} />,
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "C.A. SHRINATH GUPTA",
+    description:
+      "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
+    img: "/assets/ca_shrinarth_gupta.jpg",
+    social: [
+      {
+        id: 1,
+        label: "LinkedIn",
+        href: "/about-us#",
+        icon: <SlSocialLinkedin size={25} />,
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "C.A. GUNJAN JAIN",
+    description:
+      "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
+    img: "/assets/ca_gunjan_jain.jpg",
+    social: [
+      {
+        id: 1,
+        label: "LinkedIn",
+        href: "/about-us#",
+        icon: <SlSocialLinkedin size={25} />,
+      },
+      {
+        id: 2,
+        label: "Facebook",
+        href: "/about-us#",
+        icon: <SlSocialFacebook size={25} />,
+      },
+      {
+        id: 3,
+        label: "Instagram",
+        href: "/about-us#",
+        icon: <SlSocialInstagram size={25} />,
+      },
+    ],
+  },
+  {
+    id: 4,
+    name: "C.A. AYUSH GARG",
+    description:
+      "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
+    img: "/assets/ca_ayush_garg.jpeg",
+    social: [
+      {
+        id: 1,
+        label: "LinkedIn",
+        href: "/about-us#",
+        icon: <SlSocialLinkedin size={25} />,
+      },
+    ],
+  },
+  {
+    id: 5,
+    name: "C.A. GOVINDA SWAMI",
+    description:
+      "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
+    img: "/assets/ca_govinda_swami.jpeg",
+    social: [
+      {
+        id: 1,
+        label: "LinkedIn",
+        href: "/about-us#",
+        icon: <SlSocialLinkedin size={25} />,
+      },
+    ],
+  },
+];
 
 const Success = () => {
   return (

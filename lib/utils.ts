@@ -65,8 +65,8 @@ export const zoom = (
   delay: number,
   duration: number
 ) => {
-  const scaleStart = direction === "in" ? 0.5 : 1;
-  const scaleEnd = direction === "in" ? 1 : 0;
+  const scaleStart = direction === "in" ? 0 : 1;
+  const scaleEnd = direction === "in" ? 1 : 0.8;
 
   return {
     hidden: {

@@ -13,7 +13,7 @@ const Carousel: React.FC<CarouselProps> = ({
   autoplay = false,
   autoplaySpeed = 2000,
   pauseOnHover = true,
-  slidesToShow = 5,
+  slidesToShow = 4,
   arrows = false,
 }) => {
   const settings = {
@@ -33,14 +33,14 @@ const Carousel: React.FC<CarouselProps> = ({
       {
         breakpoint: 1280,
         settings: {
-          arrows: arrows || true,
-          slidesToShow: 5,
+          arrows: arrows,
+          slidesToShow: 4,
         },
       },
       {
         breakpoint: 970,
         settings: {
-          arrows: arrows || true,
+          arrows: arrows,
           slidesToShow: 4,
         },
       },

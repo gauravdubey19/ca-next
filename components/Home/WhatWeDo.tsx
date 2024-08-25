@@ -34,7 +34,7 @@ const WhatWeDo = () => {
           animate={isInView ? "show" : "exit"}
           className="text-center text-2xl md:text-4xl font-extrabold text-white"
         >
-          Consultant tax is built for small businesses.
+          Our Service is built specifically for your businesses.
         </motion.h2>
 
         <div className="hidden sm:grid grid-cols-1 sm:gap-8 sm:grid-cols-2 md:grid-cols-3 mt-10 overflow-x-scroll md:overflow-visible no-scrollbar snap-x snap-mandatory md:snap-none">

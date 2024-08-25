@@ -15,7 +15,7 @@ const Service = () => {
   const isInView = useInView(ref, { amount: 0.3 });
   return (
     <>
-      <section ref={ref} className="relative w-full h-fit bg-[#243D31] z-0">
+      <section ref={ref} className="relative w-full h-fit bg-[#243D31] z-0 overflow-hidden">
         <div className="w-full h-full flex flex-col gap-4 md:gap-5 items-center p-2 my-4 md:px-[120px] py-[90px] overflow-hidden">
           <motion.p
             variants={fadeInOut("down", "tween", 0.2, 0.5)}
@@ -32,7 +32,7 @@ const Service = () => {
             animate={isInView ? "show" : "exit"}
             className="w-full md:w-[35%] text-center text-4xl font-extrabold text-white"
           >
-            Consulatant tax is built for small business.
+            Our Service is designed specifically for your businesses.
           </motion.div>
           <div className="container grid grid-cols-1 gap-8 px-6 md:px-8 lg:grid-cols-2 mt-8">
             {services.map((service, index) => (
@@ -76,7 +76,7 @@ const Service = () => {
             animate={isInView ? "show" : "exit"}
           >
             <Link href="/service" className="mt-8">
-              <Button className="bg-[#FDC24C] hover:bg-[#fdc24cd8] space-x-1 px-6 py-4 md:p-7">
+              <Button className="bg-[#fdc24cec] hover:bg-[#FDC24C] space-x-1 px-6 py-4 md:p-7">
                 <span className="text-md md:text-lg font-bold text-black">
                   Explore More Services
                 </span>
@@ -99,15 +99,15 @@ const services = [
     description:
       "The audit clients of P&G today include corporates, banks, medium & small enterprises including family-owned businesses.",
     icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business1.png",
-    link: "#",
+    link: "/service#",
   },
   {
     id: 2,
     title: "Advisory Services",
     description:
       "P&G provides advisory services relating to capital issues, financing options, management audits and helps draft financing proposals.",
-    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business2.png",
-    link: "#",
+    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business4.png",
+    link: "/service#",
   },
   {
     id: 3,
@@ -115,14 +115,14 @@ const services = [
     description:
       "P&G provides advisory services relating to capital issues, financing options, management audits and helps draft financing proposals.",
     icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business3.png",
-    link: "#",
+    link: "/service#",
   },
   {
     id: 4,
     title: "Tax Planning & Consulting",
     description:
       "P&G provides strategize to your tax plan with our expert consulting services to optimize your financial outcomes.",
-    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business4.png",
-    link: "#",
+    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business2.png",
+    link: "/service#",
   },
 ];

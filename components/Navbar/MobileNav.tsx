@@ -144,14 +144,20 @@ interface ContactProps {
 const contact: ContactProps[] = [
   {
     id: "phone",
-    lable: "+91 1234567890",
-    href: "/contact",
+    lable: "+91 7647867870",
+    href: "/tel:7647867870",
+    icon: <BsTelephone size={22} />,
+  },
+  {
+    id: "phone",
+    lable: "+91 7312405500",
+    href: "/tel:7312405500",
     icon: <BsTelephone size={22} />,
   },
   {
     id: "email",
-    lable: "ca@example.com",
-    href: "/mailto:ca@example.com",
+    lable: "audit@patelngupta.com",
+    href: "/mailto:audit@patelngupta.com",
     icon: <MdOutlineMail size={22} />,
   },
 ];

@@ -37,7 +37,7 @@ export default function ScrollToTop() {
           <div
             title="Scroll to Top"
             onClick={goToBtn}
-            className="animate-slide-up fixed bottom-2 right-2 w-10 h-10 cursor-pointer flex-center bg-[#7a77c641] backdrop-blur-md rounded-full hover:scale-110 transition-transform duration-300"
+            className="animate-slide-up fixed bottom-4 right-4 w-10 h-10 cursor-pointer flex-center bg-[#7a77c641] backdrop-blur-md rounded-full hover:scale-110 transition-transform duration-300"
           >
             <FaArrowUp size={20} className="cursor-pointer" />
           </div>

@@ -8,8 +8,8 @@
 //           variants={fadeInOut("down", "tween", 0.2, 0.5)}
 //           initial="hidden"
 //           animate={isInView ? "show" : "exit"}
-
 import { motion, useInView } from "framer-motion";
+
 import {
   FacebookIcon,
   InstagramIcon,
@@ -89,7 +89,7 @@ export default function Footer({ companyName }: FooterProps) {
         <p className="text-muted-foreground text-sm">
           © {new Date().getFullYear()} {footerData.copyright}
         </p>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 md:mr-10">
           {footerData.socialLinks.map((link, index) => (
             <Link
               key={index}

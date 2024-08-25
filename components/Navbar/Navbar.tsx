@@ -48,7 +48,7 @@ const Navbar: React.FC<{ appName?: string }> = ({ appName = "LOGO" }) => {
             <Link
               href={link.href}
               key={index}
-              className={`capitalize cursor-pointer px-1 ${
+              className={`capitalize cursor-pointer ${
                 isActive
                   ? "text-primary font-semibold border-b border-b-primary"
                   : "hover:border-b hover:border-b-primary active:translate-y-0.5"
@@ -62,15 +62,18 @@ const Navbar: React.FC<{ appName?: string }> = ({ appName = "LOGO" }) => {
 
       <Link
         href={"/contact"}
-        className="relative hidden animate-slide-down group w-fit h-14 md:flex items-center gap-2 p-1 overflow-hidden"
+        className="relative hidden animate-slide-down group w-fit h-10 md:h-14 md:flex items-center gap-2 p-1 overflow-hidden"
       >
-        <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-[#7a77c641] group-hover:bg-transparent group-hover:border group-hover:border-[#7a77c6d2] flex-center ease-in-out duration-300">
-          <BsTelephone size={20} />
+        <div className="w-10 h-10 lg:w-12 lg:h-12 flex-center rounded-full bg-[#7a77c641] group-hover:bg-transparent group-hover:border group-hover:border-[#7a77c6d2] ease-in-out duration-300">
+          <BsTelephone
+            size={20}
+            className="group-hover:fill-[#7a77c6d2] ease-in-out duration-300"
+          />
         </div>
         <div className="hidden md:flex flex-col w-fit h-full py-0.5">
           <span className="text-xs">Hotline 24/7</span>
           <span className="md:text-xl lg:text-2xl font-medium">
-            +91 1234567890
+            +91 7647867870
           </span>
         </div>
       </Link>

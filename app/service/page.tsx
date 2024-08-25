@@ -1,5 +1,5 @@
-import React from "react";
+import Service from "@/components/Service/Service";
 
 export default function ServicePage() {
-  return <div>Service page</div>;
+  return <Service />;
 }

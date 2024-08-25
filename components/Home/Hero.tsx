@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { MdArrowDownward } from "react-icons/md";
 import { FaArrowUp } from "react-icons/fa";
 import { fadeInOut, zoom } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Hero() {
   const ref1 = useRef(null);
@@ -47,7 +48,7 @@ export default function Hero() {
     let scrollToPosition = 0;
 
     if (size === "mobile") {
-      scrollToPosition = window.innerHeight - 175;
+      scrollToPosition = window.innerHeight - 90;
     } else if (size === "tablet") {
       scrollToPosition = window.innerHeight;
     } else if (size === "desktop") {
@@ -62,34 +63,44 @@ export default function Hero() {
 
   return (
     <section ref={ref1} className="relative w-full h-fit md:h-[120vh]">
-      <div className="h-[calc(90vh-153px)] md:h-[calc(120vh-70px)] flex-center gap-2 px-2 py-4 overflow-hidden">
-        <div className="w-full md:w-[43%] h-fit space-y-10 p-2">
-          <motion.div
-            variants={fadeInOut("right", "tween", 0.2, 0.8)}
+      <div className="h-fit md:h-[calc(120vh-70px)] flex-center gap-2 p-4 lg:px-[120px] lg:py-8 overflow-hidden">
+        <div className="w-full md:w-[50%] h-fit space-y-5 lg:space-y-8 p-2 z-30">
+          <motion.span
+            variants={fadeInOut("right", "tween", 0.2, 0.8)} //spring
             initial="hidden"
             animate={isInView1 ? "show" : "exit"}
-            className="w-fit flex-center rounded-full bg-gray-300/50 text-sm md:text-lg font-light shadow-lg line-clamp-1 px-5 py-3 overflow-hidden"
+            className="w-fit flex-center rounded-full bg-gray-300/50 text-sm md:text-md lg:text-lg font-light shadow-lg line-clamp-1 px-5 py-3 overflow-hidden"
           >
             💸 Patel & Gupta CA{"'"}s
-          </motion.div>
+          </motion.span>
           <div className="w-fit space-y-4">
-            <motion.div
+            <motion.h2
               variants={fadeInOut("right", "tween", 0.2, 1)}
               initial="hidden"
               animate={isInView1 ? "show" : "exit"}
               className="text-4xl font-extrabold tracking-tight text-gray-950 sm:text-5xl md:text-6xl lg:text-7xl"
             >
               We are a combination of
-            </motion.div>
-            <motion.div
-              variants={fadeInOut("right", "tween", 0.2, 1.2)}
+            </motion.h2>
+            <motion.p
+              variants={fadeInOut("right", "tween", 0.2, 1.5)}
               initial="hidden"
               animate={isInView1 ? "show" : "exit"}
-              className="max-w-[600px] text-lg text-gray-700 md:text-xl lg:text-lg xl:text-xl font-light"
+              className="max-w-[600px] text-gray-700 text-lg md:text-md lg:text-lg xl:text-xl font-light"
             >
               Qualified and Experienced Professionals to cater to the needs of
               high-tech professional services.
-            </motion.div>
+            </motion.p>
+            <motion.p
+              variants={fadeInOut("right", "tween", 0.2, 1.8)}
+              initial="hidden"
+              animate={isInView1 ? "show" : "exit"}
+              className="max-w-[600px] text-gray-700 text-lg md:text-md lg:text-lg xl:text-xl font-light"
+            >
+              Our motto is to assist clients to become the most competitive in
+              the market. Our mission is to excel through the use of technology
+              and utilization of best expertise of human resources.
+            </motion.p>
           </div>
           <motion.div
             variants={fadeInOut("right", "tween", 0.2, 0.8)}
@@ -97,16 +108,20 @@ export default function Hero() {
             animate={isInView2 ? "show" : "exit"}
             className="w-full flex items-center justify-center md:justify-start flex-col gap-4 sm:flex-row"
           >
-            <Button className="bg-green-950 hover:bg-green-800 text-lg font-bold px-6 py-4 md:p-7">
-              Get An Estimated Quote
-              <FaArrowUp size={20} className="ml-1 rotate-45" />
-            </Button>
-            <Button className="bg-[#FDC24C] hover:bg-[#fdc24cd8] space-x-1 px-6 py-4 md:p-7">
-              <span className="text-lg font-bold text-black">
-                Schedule A Call
-              </span>
-              <FaArrowUp size={20} className="rotate-45 fill-black" />
-            </Button>
+            <Link href="/#">
+              <Button className="bg-green-950 hover:bg-green-800 text-lg font-bold px-6 py-4 md:p-7">
+                Get An Estimated Quote
+                <FaArrowUp size={20} className="ml-1 rotate-45" />
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button className="bg-[#fdc24cd8] hover:bg-[#FDC24C] space-x-1 px-6 py-4 md:p-7">
+                <span className="text-lg font-bold text-black">
+                  Schedule A Call
+                </span>
+                <FaArrowUp size={20} className="rotate-45 fill-black" />
+              </Button>
+            </Link>
           </motion.div>
           <div className="w-full h-fit space-y-4">
             <motion.div
@@ -143,7 +158,7 @@ export default function Hero() {
           variants={zoom("out", 0.2, 0.8)}
           initial="hidden"
           animate={isInView1 ? "show" : "exit"}
-          className="hidden lg:flex relative w-[40%] h-full rounded-xl overflow-hidden"
+          className="hidden lg:flex z-30 relative w-[50%] h-full rounded-xl overflow-hidden"
         >
           <Image
             src={hero.imageUrl}
