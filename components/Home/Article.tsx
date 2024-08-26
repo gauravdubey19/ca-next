@@ -7,8 +7,9 @@ import { MdArrowForward } from "react-icons/md";
 import { motion, useInView } from "framer-motion";
 import { fadeInOut } from "@/lib/utils";
 import { PiHandshakeLight } from "react-icons/pi";
+import { SanityDocument } from "next-sanity";
 
-const Article = () => {
+const Article = ({ posts = [] }: { posts: SanityDocument[] }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
 
@@ -36,17 +37,17 @@ const Article = () => {
           Our Service is built specifically for your businesses.
         </motion.h2>
         <div className="w-full grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-5 lg:mt-8">
-          {articles.map((article, index) => (
+          {posts.slice(0, 3).map((article, index) => (
             <motion.div
               variants={fadeInOut("left", "tween", 0.2, 0.5 * index)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
-              key={index || article.id}
+              key={index || article._id}
               className="group border rounded-2xl overflow-hidden shadow-lg"
             >
               <div className="w-full h-48 overflow-hidden rounded-t-lg">
                 <Image
-                  src={article.image}
+                  src={article.imageURL}
                   alt={article.title}
                   width={350}
                   height={150}
@@ -56,12 +57,12 @@ const Article = () => {
               <div className="p-4">
                 <h3 className="text-lg font-bold mb-1">{article.title}</h3>
                 <Link
-                  href={article.link}
+                  href={`/blog/${article.authorSlug?.current}/${article.slug?.current}`}
                   className="inline-flex items-center text-zinc-900 transition-colors duration-300 group-hover:underline underline-offset-4 text-sm"
                   prefetch={false}
                   aria-label={`Learn more about ${article.title}`}
                 >
-                  {article.ctaText}
+                  Read More
                   <MdArrowForward className="ml-1 w-4 h-4 -rotate-45" />
                 </Link>
               </div>
@@ -74,32 +75,3 @@ const Article = () => {
 };
 
 export default Article;
-
-const articles = [
-  {
-    id: 1,
-    title:
-      "How To Write Your Consulting Firm Mission Statement (Why It’s Important).",
-    image:
-      "https://cdn.prod.website-files.com/5f55ff47b6d23a11cb496a69/633d4bb18c35be84fb7ab5ef_pexels-thirdman-7994325.jpg",
-    link: "#",
-    ctaText: "Read More",
-  },
-  {
-    id: 2,
-    title:
-      "Personal Branding For Consultants: Be Authentic To Get More Clients.",
-    image:
-      "https://media.istockphoto.com/id/1408262049/photo/female-co-workers-meet-to-discuss-project.jpg?s=612x612&w=0&k=20&c=thl6QqXI4ple0-0eL8asWpaUGPEehbPz2F96YskcR9U=",
-    link: "#",
-    ctaText: "Read More",
-  },
-  {
-    id: 3,
-    title: "What Is An Entrepreneurial Consultant? (Examples Stories).",
-    image:
-      "https://media.istockphoto.com/id/1453843862/photo/business-meeting.jpg?s=612x612&w=0&k=20&c=4k9H7agmpn92B7bkUywvkK5Ckwm9Y8f8QrGs4DRDWpE=",
-    link: "#",
-    ctaText: "Read More",
-  },
-];

@@ -81,7 +81,7 @@ export const AnimatedTooltip = ({
           <Link
             href={item.href}
             onMouseMove={handleMouseMove}
-            className="flex-center !m-0 !p-0 rounded-full lg:h-14 lg:w-14 border-2 group-hover:scale-105 group-hover:z-30 bg-white relative transition duration-500"
+            className="flex-center !m-0 !p-2 rounded-full lg:h-14 lg:w-14 border-2 group-hover:scale-105 group-hover:z-30 bg-white relative transition duration-500"
           >
             {item.icon}
           </Link>

@@ -21,6 +21,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { BsTelephone } from "react-icons/bs";
+import { FiPhoneOutgoing } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
 
 interface FooterProps {
   companyName: string;
@@ -69,19 +71,20 @@ export default function Footer({ companyName }: FooterProps) {
         <div className="flex flex-col gap-2 md:gap-4 lg:gap-6">
           <h4 className="text-lg md:text-xl font-semibold">Contact</h4>
           {footerData.contactInfo.map((info, index) => (
-            <div
+            <Link
+              href={info.href}
               key={index}
               className="flex items-center gap-2 hover:underline underline-offset-8 hover:translate-x-1.5 ease-in-out duration-300"
             >
               {info.type === "phone" ? (
-                <BsTelephone className="h-5 w-5 text-muted-foreground" />
+                <FiPhoneOutgoing size={20} className="text-muted-foreground" />
               ) : (
-                <MailIcon className="h-5 w-5 text-muted-foreground" />
+                <MdOutlineEmail size={20} className="text-muted-foreground" />
               )}
               <p className="text-muted-foreground text-sm md:text-md lg:text-lg">
                 {info.value}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -137,21 +140,34 @@ const footerData = {
       title: "Our Company",
       links: [
         { label: "Service", href: "/service" },
-        { label: "About us", href: "/about" },
+        { label: "About us", href: "/about-us" },
         { label: "Contact us", href: "/contact" },
       ],
     },
     {
       title: "Resources",
-      links: [
-        { label: "FAQs", href: "#" },
-        { label: "Guides", href: "#" },
-      ],
+      links: [{ label: "FAQs", href: "/#faqs" }],
     },
   ],
   contactInfo: [
-    { type: "phone", label: "USA", value: "+91 123456789" },
-    { type: "email", label: "General Info", value: "ca@example.com" },
+    {
+      type: "phone",
+      label: "India",
+      value: "+91 7647867870",
+      href: "/tel:+91 7647867870",
+    },
+    {
+      type: "phone",
+      label: "India",
+      value: "+91 7312405500",
+      href: "/tel:+91 7312405500",
+    },
+    {
+      type: "email",
+      label: "General Info",
+      value: "audit@patelngupta.com",
+      href: "/mailto:audit@patelngupta.com",
+    },
   ],
-  copyright: "Consultia by flexesstudio. All Rights Reserved.",
+  copyright: "All Rights Reserved by Patel & Gupta CA's.",
 };

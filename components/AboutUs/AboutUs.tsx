@@ -99,7 +99,7 @@ const Story = () => {
             variants={fadeInOut("right", "tween", 0.2, 1)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance text-justify"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance"
           >
             The firm {'"PATEL & GUPTA, Chartered Accountants"'} was incorporated
             in the year 2000 as a partnership firm with four partners, with a
@@ -111,7 +111,7 @@ const Story = () => {
             variants={fadeInOut("left", "tween", 0.2, 1)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance text-justify"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance"
           >
             The firm is also engaged in providing financial assistance from
             banks and FIs by the way of Term Loan, Short-term and long-term
@@ -126,7 +126,7 @@ const Story = () => {
             variants={fadeInOut("right", "tween", 0.2, 1.3)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance text-justify"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance"
           >
             Our firm has also been engaged previously for field audit and
             documentation on behalf of Standard Chartered Bank for their Supply
@@ -137,7 +137,7 @@ const Story = () => {
             variants={fadeInOut("left", "tween", 0.2, 1.3)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance text-justify"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance"
           >
             Firm is also engaged in providing financial assistance from banks
             and FIs by the way of Term Loan, Short-term and long-term Working
@@ -153,7 +153,7 @@ const Story = () => {
           animate={isInView ? "show" : "exit"}
           className="w-full h-fit flex flex-col md:flex-row gap-5"
         >
-          <p className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance text-justify">
+          <p className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance">
             Our firm has also been engaged previously for field audit and
             documentation on behalf of Standard Chartered Bank for their Supply
             Chain Finance product under Dealer Financing Flexiloan in M.P.,
@@ -299,7 +299,7 @@ const OurTeam: React.FC = () => {
       >
         Our Team
       </motion.div>
-      <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-2">
+      <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-2">
         {ourTeam.map((card) => (
           <motion.div
             key={card.id}
@@ -345,7 +345,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
             </h3>
           </div>
         </motion.div>
-        <motion.div className="absolute w-full h-full bg-[#E7E8F4] text-center flex flex-col items-center justify-center p-4 rounded-xl backface-hidden rotateY-180">
+        <motion.div className="absolute w-full h-full bg-[#E7E8F4] text-sm md:text-md lg:text-lg text-center flex-center flex-col p-4 rounded-xl backface-hidden rotateY-180">
           <p className="mb-4">{card.description}</p>
           <div className="flex flex-wrap gap-6 md:gap-4 lg:gap-2">
             <AnimatedTooltip items={card.social} />

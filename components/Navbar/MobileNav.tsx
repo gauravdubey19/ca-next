@@ -53,16 +53,16 @@ const MobileNav = () => {
   return (
     <div className="md:hidden">
       <Sheet open={isOpen} onOpenChange={setOpen}>
-        <SheetTrigger asChild>
+        <SheetTrigger asChild className="w-fit h-fit overflow-hidden">
           <div
             onClick={handleMenuClick}
-            className="border border-black rounded-sm animate-slide-down"
+            className="w-fit h-fit border border-black rounded-md animate-slide-down"
           >
             <Hamburger
               toggled={isOpen}
               toggle={setOpen}
               direction="left"
-              size={28}
+              size={25}
             />
           </div>
         </SheetTrigger>

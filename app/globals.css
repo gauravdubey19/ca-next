@@ -109,3 +109,19 @@
 .rotateY-180 {
   transform: rotateY(180deg);
 }
+
+/* In your global CSS file or TailwindCSS file */
+
+.hover-link {
+  @apply uppercase no-underline inline-block relative;
+}
+
+.hover-link::after {
+  content: "";
+  @apply block h-0.5 absolute w-0 bg-current left-2/4 -bottom-1 transition-all duration-300;
+}
+
+.hover-link:hover::after,
+.hover-link.active::after {
+  @apply w-full left-0;
+}

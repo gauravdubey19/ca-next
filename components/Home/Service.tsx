@@ -9,13 +9,17 @@ import { FaArrowUp } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
 import { fadeInOut } from "@/lib/utils";
 import { PiHandshakeLight } from "react-icons/pi";
+import { services } from "@/lib/data";
 
 const Service = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
   return (
     <>
-      <section ref={ref} className="relative w-full h-fit bg-[#243D31] z-0 overflow-hidden">
+      <section
+        ref={ref}
+        className="relative w-full h-fit bg-[#243D31] z-0 overflow-hidden"
+      >
         <div className="w-full h-full flex flex-col gap-4 md:gap-5 items-center p-2 my-4 md:px-[120px] py-[90px] overflow-hidden">
           <motion.p
             variants={fadeInOut("down", "tween", 0.2, 0.5)}
@@ -91,38 +95,3 @@ const Service = () => {
 };
 
 export default Service;
-
-const services = [
-  {
-    id: 1,
-    title: "Audit and Assurance Services",
-    description:
-      "The audit clients of P&G today include corporates, banks, medium & small enterprises including family-owned businesses.",
-    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business1.png",
-    link: "/service#",
-  },
-  {
-    id: 2,
-    title: "Advisory Services",
-    description:
-      "P&G provides advisory services relating to capital issues, financing options, management audits and helps draft financing proposals.",
-    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business4.png",
-    link: "/service#",
-  },
-  {
-    id: 3,
-    title: "Taxation Services",
-    description:
-      "P&G provides advisory services relating to capital issues, financing options, management audits and helps draft financing proposals.",
-    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business3.png",
-    link: "/service#",
-  },
-  {
-    id: 4,
-    title: "Tax Planning & Consulting",
-    description:
-      "P&G provides strategize to your tax plan with our expert consulting services to optimize your financial outcomes.",
-    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business2.png",
-    link: "/service#",
-  },
-];

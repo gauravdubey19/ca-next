@@ -11,10 +11,8 @@ import { fadeInOut, zoom } from "@/lib/utils";
 import Link from "next/link";
 
 export default function Hero() {
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const isInView1 = useInView(ref1, { amount: 0.3 });
-  const isInView2 = useInView(ref2, { amount: 0.3 });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.3 });
 
   const [size, setSize] = useState<string>("mobile");
   const [windowWidth, setWindowWidth] = useState<number>(
@@ -62,13 +60,14 @@ export default function Hero() {
   };
 
   return (
-    <section ref={ref1} className="relative w-full h-fit md:h-[120vh]">
+    <section className="relative w-full h-fit md:h-[120vh]">
       <div className="h-fit md:h-[calc(120vh-70px)] flex-center gap-2 p-4 lg:px-[120px] lg:py-8 overflow-hidden">
-        <div className="w-full md:w-[50%] h-fit space-y-5 lg:space-y-8 p-2 z-30">
+        <div className="w-full lg:w-[50%] h-fit space-y-5 lg:space-y-8 p-2 z-30">
           <motion.span
             variants={fadeInOut("right", "tween", 0.2, 0.8)} //spring
             initial="hidden"
-            animate={isInView1 ? "show" : "exit"}
+            whileInView="show"
+            animate="show"
             className="w-fit flex-center rounded-full bg-gray-300/50 text-sm md:text-md lg:text-lg font-light shadow-lg line-clamp-1 px-5 py-3 overflow-hidden"
           >
             💸 Patel & Gupta CA{"'"}s
@@ -77,7 +76,8 @@ export default function Hero() {
             <motion.h2
               variants={fadeInOut("right", "tween", 0.2, 1)}
               initial="hidden"
-              animate={isInView1 ? "show" : "exit"}
+              whileInView="show"
+              animate="show"
               className="text-4xl font-extrabold tracking-tight text-gray-950 sm:text-5xl md:text-6xl lg:text-7xl"
             >
               We are a combination of
@@ -85,7 +85,8 @@ export default function Hero() {
             <motion.p
               variants={fadeInOut("right", "tween", 0.2, 1.5)}
               initial="hidden"
-              animate={isInView1 ? "show" : "exit"}
+              whileInView="show"
+              animate="show"
               className="max-w-[600px] text-gray-700 text-lg md:text-md lg:text-lg xl:text-xl font-light"
             >
               Qualified and Experienced Professionals to cater to the needs of
@@ -94,7 +95,8 @@ export default function Hero() {
             <motion.p
               variants={fadeInOut("right", "tween", 0.2, 1.8)}
               initial="hidden"
-              animate={isInView1 ? "show" : "exit"}
+              whileInView="show"
+              animate="show"
               className="max-w-[600px] text-gray-700 text-lg md:text-md lg:text-lg xl:text-xl font-light"
             >
               Our motto is to assist clients to become the most competitive in
@@ -105,7 +107,7 @@ export default function Hero() {
           <motion.div
             variants={fadeInOut("right", "tween", 0.2, 0.8)}
             initial="hidden"
-            animate={isInView2 ? "show" : "exit"}
+            animate={isInView ? "show" : "exit"}
             className="w-full flex items-center justify-center md:justify-start flex-col gap-4 sm:flex-row"
           >
             <Link href="/#">
@@ -123,11 +125,11 @@ export default function Hero() {
               </Button>
             </Link>
           </motion.div>
-          <div className="w-full h-fit space-y-4">
+          {/* <div className="w-full h-fit space-y-4">
             <motion.div
               variants={fadeInOut("right", "tween", 0.2, 1)}
               initial="hidden"
-              animate={isInView2 ? "show" : "exit"}
+              animate={isInView ? "show" : "exit"}
               className="text-lg md:text-xl"
             >
               Trusted by more than 400+ companies worldwide
@@ -152,12 +154,13 @@ export default function Hero() {
                 </motion.div>
               ))}
             </Carousel>
-          </div>
+          </div> */}
         </div>
         <motion.div
           variants={zoom("out", 0.2, 0.8)}
           initial="hidden"
-          animate={isInView1 ? "show" : "exit"}
+          whileInView="show"
+          animate="show"
           className="hidden lg:flex z-30 relative w-[50%] h-full rounded-xl overflow-hidden"
         >
           <Image
@@ -181,13 +184,13 @@ export default function Hero() {
         </motion.div>
       </div>
       <div
-        ref={ref2}
+        ref={ref}
         className="absolute -bottom-12 z-20 w-full h-[70px] flex-center"
       >
         <motion.div
           variants={fadeInOut("down", "tween", 0.2, 0.8)}
           initial="hidden"
-          animate={isInView2 ? "show" : "exit"}
+          animate={isInView ? "show" : "exit"}
           className="w-fit h-fit border-t-2 border-dashed border-slate-400 rounded-full p-1"
         >
           <button

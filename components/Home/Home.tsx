@@ -5,18 +5,23 @@ import WhatWeDo from "./WhatWeDo";
 import JoinUs from "./JoinUs";
 import About from "./About";
 import Article from "./Article";
+import { postsQuery } from "@/sanity/lib/queries";
+import { SanityDocument } from "next-sanity";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import FAQs from "./FAQs";
 
-const Home = () => {
+export default async function Home() {
+  const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });
+
   return (
     <main className="w-full h-full overflow-hidden">
       <Hero />
       <Service />
       <About />
       <WhatWeDo />
-      <Article />
+      <Article posts={posts} />
       <JoinUs />
+      <FAQs />
     </main>
   );
-};
-
-export default Home;
+}

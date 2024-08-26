@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { fadeInOut } from "@/lib/utils";
 import { MdArrowForward } from "react-icons/md";
+import { services } from "@/lib/data";
 
 const Service = () => {
   return (
@@ -99,38 +100,3 @@ const Services = () => {
     </>
   );
 };
-
-const services = [
-  {
-    id: 1,
-    title: "Audit and Assurance Services",
-    description:
-      "The audit clients of P&G today include corporates, banks, medium & small enterprises including family-owned businesses.",
-    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business1.png",
-    link: "/service#",
-  },
-  {
-    id: 2,
-    title: "Advisory Services",
-    description:
-      "P&G provides advisory services relating to capital issues, financing options, management audits and helps draft financing proposals.",
-    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business4.png",
-    link: "/service#",
-  },
-  {
-    id: 3,
-    title: "Taxation Services",
-    description:
-      "P&G provides advisory services relating to capital issues, financing options, management audits and helps draft financing proposals.",
-    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business3.png",
-    link: "/service#",
-  },
-  {
-    id: 4,
-    title: "Tax Planning & Consulting",
-    description:
-      "P&G provides strategize to your tax plan with our expert consulting services to optimize your financial outcomes.",
-    icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business2.png",
-    link: "/service#",
-  },
-];
