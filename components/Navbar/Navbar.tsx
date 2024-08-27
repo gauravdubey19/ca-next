@@ -7,6 +7,15 @@ import MobileNav from "./MobileNav";
 import { links } from "@/lib/data";
 import { BsTelephone } from "react-icons/bs";
 import Image from "next/image";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "../ui/navigation-menu";
 
 const Navbar: React.FC<{ appName?: string }> = ({ appName = "LOGO" }) => {
   const pathname = usePathname();
@@ -25,9 +34,9 @@ const Navbar: React.FC<{ appName?: string }> = ({ appName = "LOGO" }) => {
 
   return (
     <div
-      className={`sticky top-0 z-[99999] h-[60px] w-full flex-between ${
+      className={`sticky top-0 z-50 h-[60px] w-full flex-between ${
         isScrolled ? "bg-white" : pathname === "/" ? "bg-white" : "bg-[#E7E8F4]"
-      } text-black p-2 px-4 md:px-6 lg:px-20 xl:px-28 2xl:px-32 transition-colors duration-300 overflow-hidden`}
+      } text-black p-2 px-4 md:px-6 lg:px-20 xl:px-28 2xl:px-32 transition-colors duration-300`}
     >
       <Link
         href="/"
@@ -43,23 +52,80 @@ const Navbar: React.FC<{ appName?: string }> = ({ appName = "LOGO" }) => {
       </Link>
 
       <MobileNav />
-
-      <nav className="relative hidden md:flex items-center gap-4 md:gap-5 lg:gap-7 xl:gap-10 animate-slide-down text-sm font-thin">
+      <NavigationMenu className="hidden md:flex">
+        <NavigationMenuList className="relative hidden md:flex items-center gap-4 md:gap-5 lg:gap-7 xl:gap-10 animate-slide-down text-sm font-thin">
+          {links.map((link, index) => {
+            const isActive = pathname === link.href;
+            return (
+              <NavigationMenuItem key={index} className="">
+                {link.pages ? (
+                  <>
+                    <NavigationMenuTrigger className="bg-transparent border-none outline-none p-1">
+                      <Link
+                        href={link.href}
+                        legacyBehavior
+                        passHref
+                        className={`capitalize cursor-pointer hover-link ${
+                          isActive ? "font-semibold active" : ""
+                        } ease-in-out duration-200`}
+                      >
+                        {link.head}
+                      </Link>
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent className="w-fit space-y-2 p-2">
+                      {link.pages.map((link, index) => {
+                        const isActive = pathname === link.href;
+                        return (
+                          <div key={index} className="w-24">
+                            <Link
+                              href={link.href}
+                              className={`w-fit capitalize cursor-pointer hover-link ${
+                                isActive ? "font-semibold active" : ""
+                              } ease-in-out duration-200`}
+                            >
+                              {link.head}
+                            </Link>
+                          </div>
+                        );
+                      })}
+                    </NavigationMenuContent>
+                  </>
+                ) : (
+                  <Link href={link.href} legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={`capitalize cursor-pointer hover-link ${
+                        isActive ? "font-semibold active" : ""
+                      } ease-in-out duration-200`}
+                    >
+                      {link.head}
+                    </NavigationMenuLink>
+                  </Link>
+                )}
+              </NavigationMenuItem>
+            );
+          })}
+        </NavigationMenuList>
+      </NavigationMenu>
+      {/* <nav className="relative hidden md:flex items-center gap-4 md:gap-5 lg:gap-7 xl:gap-10 animate-slide-down text-sm font-thin">
         {links.map((link, index) => {
           const isActive = pathname === link.href;
           return (
-            <Link
-              href={link.href}
-              key={index}
-              className={`capitalize cursor-pointer hover-link ${
-                isActive ? "font-semibold active" : ""
-              } ease-in-out duration-200`}
-            >
-              {link.head}
-            </Link>
+            <div key={index} className="relative">
+              <Link
+                href={link.href}
+                className={`capitalize cursor-pointer hover-link ${
+                  isActive ? "font-semibold active" : ""
+                } ease-in-out duration-200`}
+              >
+                {link.head}
+              </Link>
+              {link.pages && (
+                <div className="absolute z-50 -bottom-10 w-full h-full br"></div>
+              )}
+            </div>
           );
         })}
-      </nav>
+      </nav> */}
 
       <Link
         href={"tel:+917647867870"}

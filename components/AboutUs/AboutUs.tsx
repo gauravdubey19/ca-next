@@ -99,7 +99,7 @@ const Story = () => {
             variants={fadeInOut("right", "tween", 0.2, 1)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance"
           >
             The firm {'"PATEL & GUPTA, Chartered Accountants"'} was incorporated
             in the year 2000 as a partnership firm with four partners, with a
@@ -111,7 +111,7 @@ const Story = () => {
             variants={fadeInOut("left", "tween", 0.2, 1)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance"
           >
             The firm is also engaged in providing financial assistance from
             banks and FIs by the way of Term Loan, Short-term and long-term
@@ -126,7 +126,7 @@ const Story = () => {
             variants={fadeInOut("right", "tween", 0.2, 1.3)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance"
           >
             Our firm has also been engaged previously for field audit and
             documentation on behalf of Standard Chartered Bank for their Supply
@@ -137,7 +137,7 @@ const Story = () => {
             variants={fadeInOut("left", "tween", 0.2, 1.3)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance"
           >
             Firm is also engaged in providing financial assistance from banks
             and FIs by the way of Term Loan, Short-term and long-term Working
@@ -153,7 +153,7 @@ const Story = () => {
           animate={isInView ? "show" : "exit"}
           className="w-full h-fit flex flex-col md:flex-row gap-5"
         >
-          <p className="w-full h-fit flex-1 text-sm md:text-md lg:text-lg font-thin text-balance">
+          <p className="w-full h-fit flex-1 text-center text-sm md:text-md lg:text-xl font-thin overflow-hidden">
             Our firm has also been engaged previously for field audit and
             documentation on behalf of Standard Chartered Bank for their Supply
             Chain Finance product under Dealer Financing Flexiloan in M.P.,
@@ -214,7 +214,7 @@ const Business = () => {
               variants={fadeInOut("left", "tween", 0.2, 1)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
-              className="w-full h-fit text-sm md:text-md lg:text-lg text-balance text-justify"
+              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
             >
               The firm {'"PATEL & GUPTA, Chartered Accountants"'} was
               incorporated in the year 2000 as a partnership firm with four
@@ -226,7 +226,7 @@ const Business = () => {
               variants={fadeInOut("left", "tween", 0.2, 1.2)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
-              className="w-full h-fit text-sm md:text-md lg:text-lg text-balance text-justify"
+              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
             >
               We are also engaged in providing financial assistance from banks
               and financial institutions through various loan options including
@@ -239,7 +239,7 @@ const Business = () => {
               variants={fadeInOut("left", "tween", 0.2, 1.5)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
-              className="w-full h-fit text-sm md:text-md lg:text-lg text-balance text-justify"
+              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
             >
               Our firm has previously been engaged for field audit and
               documentation on behalf of Standard Chartered Bank for their

@@ -14,22 +14,15 @@ import {
   FacebookIcon,
   InstagramIcon,
   LinkedinIcon,
-  MailIcon,
   TwitterIcon,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import { BsTelephone } from "react-icons/bs";
 import { FiPhoneOutgoing } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 
-interface FooterProps {
-  companyName: string;
-  copyright?: string;
-}
-
-export default function Footer({ companyName }: FooterProps) {
+export default function Footer() {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
 
@@ -46,21 +39,21 @@ export default function Footer({ companyName }: FooterProps) {
               className="w-fit h-fit"
             />
           </Link>
-          <p className="text-muted-foreground text-sm md:text-md text-balance text-justify">
+          <p className="text-muted-foreground text-sm md:text-md text-balance">
             {footerData.companyDescription}
           </p>
         </div>
         {footerData.columns.map((column, index) => (
           <div
             key={index}
-            className="flex flex-col gap-2 md:gap-4 lg:gap-6 md:px-4"
+            className="w-fit h-fit flex flex-col gap-2 md:gap-4 lg:gap-6 md:px-4"
           >
             <h4 className="text-lg md:text-xl font-semibold">{column.title}</h4>
             {column.links.map((link, linkIndex) => (
               <Link
                 key={linkIndex}
                 href={link.href}
-                className="text-muted-foreground text-sm md:text-md lg:text-lg hover:underline underline-offset-8 hover:translate-x-2 ease-in-out duration-300"
+                className="w-fit text-muted-foreground text-sm md:text-md lg:text-lg hover-underline-lr hover:translate-x-2 ease-in-out duration-300"
                 prefetch={false}
               >
                 {link.label}
@@ -74,16 +67,12 @@ export default function Footer({ companyName }: FooterProps) {
             <Link
               href={info.href}
               key={index}
-              className="flex items-center gap-2 hover:underline underline-offset-8 hover:translate-x-1.5 ease-in-out duration-300"
+              className="w-fit h-fit flex items-center gap-2 hover:translate-x-1.5 ease-in-out duration-300"
             >
-              {info.type === "phone" ? (
-                <FiPhoneOutgoing size={20} className="text-muted-foreground" />
-              ) : (
-                <MdOutlineEmail size={20} className="text-muted-foreground" />
-              )}
-              <p className="text-muted-foreground text-sm md:text-md lg:text-lg">
+              {info.icon}
+              <span className="hover-underline-lr text-muted-foreground text-sm md:text-md lg:text-lg">
                 {info.value}
-              </p>
+              </span>
             </Link>
           ))}
         </div>
@@ -98,6 +87,7 @@ export default function Footer({ companyName }: FooterProps) {
               key={index}
               href={link.href}
               title={link.lable}
+              target="_blank"
               className="text-muted-foreground hover:text-foreground"
               prefetch={false}
             >
@@ -115,7 +105,7 @@ const footerData = {
     "Offering tailored financial solutions, including term loans, working capital loans, mortgage and unsecured loans, heavy equipment financing, export credit, LC, and bank guarantee facilities to meet your unique needs.",
   socialLinks: [
     {
-      href: "#",
+      href: "https://www.linkedin.com/company/patel-&-gupta-chartered-accountants/about/",
       lable: "LinkedIn",
       icon: <LinkedinIcon className="h-5 w-5" />,
     },
@@ -133,16 +123,16 @@ const footerData = {
   ],
   columns: [
     {
-      title: "Learn",
-      links: [{ label: "Our Blog", href: "/blog" }],
-    },
-    {
       title: "Our Company",
       links: [
         { label: "Service", href: "/service" },
         { label: "About us", href: "/about-us" },
         { label: "Contact us", href: "/contact" },
       ],
+    },
+    {
+      title: "Learn",
+      links: [{ label: "Our Blog", href: "/blog" }],
     },
     {
       title: "Resources",
@@ -155,18 +145,21 @@ const footerData = {
       label: "India",
       value: "+91 7647867870",
       href: "/tel:+91 7647867870",
+      icon: <FiPhoneOutgoing size={20} className="text-muted-foreground" />,
     },
     {
       type: "phone",
       label: "India",
       value: "+91 7312405500",
       href: "/tel:+91 7312405500",
+      icon: <FiPhoneOutgoing size={20} className="text-muted-foreground" />,
     },
     {
       type: "email",
       label: "General Info",
       value: "audit@patelngupta.com",
       href: "/mailto:audit@patelngupta.com",
+      icon: <MdOutlineEmail size={20} className="text-muted-foreground" />,
     },
   ],
   copyright: "All Rights Reserved by Patel & Gupta CA's.",

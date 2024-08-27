@@ -1,6 +1,11 @@
-export interface BlogDetailParams {
+export interface BlogPostDetailParams {
   params: {
     author: string;
+    slug: string;
+  };
+}
+export interface WWDDetailParams {
+  params: {
     slug: string;
   };
 }
@@ -9,6 +14,18 @@ export interface LinkValues {
   id: number;
   head: string;
   href: string;
+  pages?: [
+    {
+      id: number;
+      head: string;
+      href: string;
+    },
+    {
+      id: number;
+      head: string;
+      href: string;
+    },
+  ];
 }
 
 export interface ServiceValues {

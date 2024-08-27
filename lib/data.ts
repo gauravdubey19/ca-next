@@ -4,7 +4,15 @@ export const links: LinkValues[] = [
   { id: 0, head: "Home", href: "/" },
   { id: 3, head: "About Us", href: "/about-us" },
   { id: 2, head: "Service", href: "/service" },
-  { id: 3, head: "Blog", href: "/blog" },
+  {
+    id: 3,
+    head: "Blog",
+    href: "/blog/post",
+    pages: [
+      { id: 0, head: "Post", href: "/blog/post" },
+      { id: 1, head: "What We Do", href: "/blog/what-we-do" },
+    ],
+  },
   { id: 4, head: "Contact", href: "/contact" },
 ];
 
@@ -51,31 +59,54 @@ export const services: ServiceValues[] = [
   },
 ];
 
-const articles = [
+export const faqs = [
   {
     id: 1,
-    title:
-      "How To Write Your Consulting Firm Mission Statement (Why It’s Important).",
-    image:
-      "https://cdn.prod.website-files.com/5f55ff47b6d23a11cb496a69/633d4bb18c35be84fb7ab5ef_pexels-thirdman-7994325.jpg",
-    link: "#",
-    ctaText: "Read More",
+    value: "item-1",
+    question: "What should entrepreneurs never do?",
+    answer:
+      "I’m a serial entrepreneur and have started/ran/sold approximately 20 businesses over the past 45 years. Some of my businesses made millions, some of them broke even. But - I never lost a dime on a single one.",
   },
   {
     id: 2,
-    title:
-      "Personal Branding For Consultants: Be Authentic To Get More Clients.",
-    image:
-      "https://media.istockphoto.com/id/1408262049/photo/female-co-workers-meet-to-discuss-project.jpg?s=612x612&w=0&k=20&c=thl6QqXI4ple0-0eL8asWpaUGPEehbPz2F96YskcR9U=",
-    link: "#",
-    ctaText: "Read More",
+    value: "item-2",
+    question: "Why do I need a Chartered Accountant?",
+    answer:
+      "A Chartered Accountant provides expert advice on financial planning, tax strategies, and compliance with financial regulations, ensuring that your business is financially sound and legally compliant.",
   },
   {
     id: 3,
-    title: "What Is An Entrepreneurial Consultant? (Examples Stories).",
-    image:
-      "https://media.istockphoto.com/id/1453843862/photo/business-meeting.jpg?s=612x612&w=0&k=20&c=4k9H7agmpn92B7bkUywvkK5Ckwm9Y8f8QrGs4DRDWpE=",
-    link: "#",
-    ctaText: "Read More",
+    value: "item-3",
+    question: "What services do Chartered Accountants offer?",
+    answer:
+      "Chartered Accountants offer a wide range of services including tax planning, auditing, financial reporting, business advisory, and risk management, tailored to meet the unique needs of each client.",
+  },
+  {
+    id: 4,
+    value: "item-4",
+    question: "How can I reduce my tax liability?",
+    answer:
+      "Reducing tax liability involves strategic planning, taking advantage of tax deductions, credits, and efficient tax structures. A Chartered Accountant can guide you through legal avenues to minimize your tax burden.",
+  },
+  {
+    id: 5,
+    value: "item-5",
+    question: "What is the difference between bookkeeping and accounting?",
+    answer:
+      "Bookkeeping involves the daily recording of financial transactions, while accounting encompasses interpreting, classifying, analyzing, reporting, and summarizing financial data to inform business decisions.",
+  },
+  {
+    id: 6,
+    value: "item-6",
+    question: "How often should I meet with my Chartered Accountant?",
+    answer:
+      "It’s recommended to meet with your Chartered Accountant at least quarterly to review financial performance, discuss tax planning strategies, and ensure your business remains on track with its financial goals.",
+  },
+  {
+    id: 7,
+    value: "item-7",
+    question: "What should I prepare before meeting my Chartered Accountant?",
+    answer:
+      "Before meeting your Chartered Accountant, gather all relevant financial documents, including income statements, balance sheets, tax returns, and any other records that reflect your business’s financial activities.",
   },
 ];

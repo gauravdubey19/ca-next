@@ -7,5 +7,5 @@ export default async function BlogPage() {
   const posts = await sanityFetch<SanityDocument[]>({ query: postsQuery });
   // console.log(posts);
 
-  return <Blog posts={posts} />;
+  return <Blog posts={posts} page="post" />;
 }
