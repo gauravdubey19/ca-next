@@ -21,7 +21,7 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
     publishedAt,
     body,
   } = post;
-  console.log(body);
+  // console.log(body);
 
   return (
     <article className="w-full h-fit bg-gradient-to-b from-[#E7E8F4] to-white overflow-hidden">

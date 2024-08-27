@@ -30,7 +30,7 @@ export default function RootLayout({
         {children}
         <Toaster />
         <ScrollToTop />
-        <Footer companyName="LOGO" />
+        <Footer />
       </body>
     </html>
   );
