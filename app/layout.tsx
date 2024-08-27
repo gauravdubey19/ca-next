@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
+import { Toaster } from "@/components/ui/toaster";
 
 const arimo = Arimo({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className={arimo.className}>
         <Navbar />
         {children}
+        <Toaster />
         <ScrollToTop />
         <Footer companyName="LOGO" />
       </body>

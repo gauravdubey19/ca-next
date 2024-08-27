@@ -70,7 +70,7 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
           </motion.div>
         )}
 
-        <div className="lg:flex lg:items-center lg:space-x-6">
+        <div className="lg:flex lg:space-x-6">
           <section className="prose lg:prose-xl max-w-none text-gray-700 lg:flex-1">
             <motion.p
               variants={fadeInOut("right", "tween", 0.2, 1)}

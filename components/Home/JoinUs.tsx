@@ -7,7 +7,8 @@ import { motion, useInView } from "framer-motion";
 import { FaArrowUp } from "react-icons/fa";
 import { PiHandshakeLight } from "react-icons/pi";
 import { Dialog, DialogContent, DialogTitle } from "../ui/dialog";
-import { Form } from "../Contact/Form";
+import { sendEmail } from "@/lib/actions/sendEmail.action";
+import { toast } from "../ui/use-toast";
 
 export default function JoinUs() {
   const [isOpen, setOpen] = useState<boolean>(false);
@@ -106,7 +107,12 @@ export default function JoinUs() {
         </motion.div>
       </div>
       {isOpen && (
-        <Popup isOpen={isOpen} handleClose={handlePopupClose} email={email} />
+        <Popup
+          isOpen={isOpen}
+          handleClose={handlePopupClose}
+          email={email}
+          setEmail={setEmail}
+        />
       )}
     </section>
   );
@@ -116,14 +122,204 @@ interface PopupProps {
   isOpen: boolean;
   handleClose: () => void;
   email: string;
+  setEmail: (email: string) => void;
 }
 
-const Popup: React.FC<PopupProps> = ({ isOpen, handleClose, email }) => (
+const Popup: React.FC<PopupProps> = ({
+  isOpen,
+  handleClose,
+  email,
+  setEmail,
+}) => (
   <>
     <Dialog open={isOpen} onOpenChange={handleClose}>
-      <DialogContent className="w-[90%] md:w-[652px] md:h-[80%] flex-center flex-col gap-0 mx-auto p-0 bg-black/25 backdrop-blur-md border-none shadow-md shadow-slate-600 hover:shadow-md hover:shadow-teal-500 rounded-xl overflow-hidden">
-        <DialogTitle className="text-white">Hello {email}</DialogTitle>
+      <DialogContent className="w-[90%] md:w-[652px] md:h-[80%] flex-center flex-col gap-0 mx-auto p-0 bg-black/10 backdrop-blur-md border-none shadow-md shadow-slate-600 hover:shadow-md hover:shadow-teal-500 rounded-xl scroll-div overflow-x-hidden overflow-y-scroll">
+        <DialogTitle className=""></DialogTitle>
+        <Form email={email} setEmail={setEmail} handleClose={handleClose} />
       </DialogContent>
     </Dialog>
   </>
 );
+
+interface FormProps {
+  email: string;
+  setEmail: (email: string) => void;
+  handleClose: () => void;
+}
+
+interface FormErrors {
+  name?: string;
+  phone?: string;
+  message?: string;
+}
+
+const Form: React.FC<FormProps> = ({ email, setEmail, handleClose }) => {
+  const [name, setName] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const validatePhone = (phone: string): boolean => {
+    const phonePattern = /^[0-9]{10}$/;
+    return phonePattern.test(phone);
+  };
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+    if (!e.target.value) {
+      setErrors((prev) => ({ ...prev, name: "Name is required" }));
+    } else {
+      setErrors((prev) => ({ ...prev, name: "" }));
+    }
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const inputPhone = e.target.value.replace(/[^\d]/g, "").slice(0, 10);
+    setPhone(inputPhone);
+    if (!inputPhone) {
+      setErrors((prev) => ({ ...prev, phone: "Phone number is required" }));
+    } else if (!validatePhone(inputPhone)) {
+      setErrors((prev) => ({
+        ...prev,
+        phone: "Minimum phone number should be 10",
+      }));
+    } else {
+      setErrors((prev) => ({ ...prev, phone: "" }));
+    }
+  };
+
+  const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+    if (!e.target.value) {
+      setErrors((prev) => ({ ...prev, message: "Message is required" }));
+    } else {
+      setErrors((prev) => ({ ...prev, message: "" }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    let formErrors: FormErrors = {};
+
+    if (!name) formErrors.name = "Name is required";
+    if (!phone) formErrors.phone = "Phone number is required";
+    else if (!validatePhone(phone))
+      formErrors.phone = "Invalid phone number format";
+
+    if (!message) formErrors.message = "Message is required";
+
+    setErrors(formErrors);
+
+    if (Object.keys(formErrors).length === 0) {
+      setIsSubmitting(true);
+
+      try {
+        const response = await sendEmail(name, email, phone, message);
+
+        if (response.success) {
+          toast({
+            title: "Email sent successfully!",
+            description: "We'll reach out to you very soon.",
+          });
+          setName("");
+          setEmail("");
+          setPhone("");
+          setMessage("");
+          handleClose();
+        } else {
+          toast({
+            title: "Failed to send email.",
+            description: "Please try again later.",
+            variant: "destructive",
+          });
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        toast({
+          title: "An unexpected error occurred.",
+          description: "Please try again later.",
+          variant: "destructive",
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="w-full p-2 text-white space-y-4">
+      <div className="space-y-3 mt-2">
+        <p className="w-full text-center text-lg md:text-2xl">Get in touch</p>
+        <p className="text-md md:text-lg">
+          Email:{" "}
+          <span className="underline underline-offset-4 text-[#7977C6]">
+            {email}
+          </span>
+        </p>
+      </div>
+
+      <div>
+        <label htmlFor="name" className="block font-medium">
+          Name*
+        </label>
+        <input
+          id="name"
+          type="text"
+          value={name}
+          onChange={handleNameChange}
+          className="w-full bg-transparent border-b border-b-gray-600 outline-none rounded px-3 py-2"
+        />
+        {errors.name && (
+          <span className="text-red-500 text-sm">{errors.name}</span>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="phone" className="block font-medium">
+          Phone Number*
+        </label>
+        <input
+          id="phone"
+          type="text"
+          value={phone}
+          onChange={handlePhoneChange}
+          className="w-full bg-transparent border-b border-b-gray-600 outline-none rounded px-3 py-2"
+        />
+        {errors.phone && (
+          <span className="text-red-500 text-sm">{errors.phone}</span>
+        )}
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block font-medium">
+          Message
+        </label>
+        <textarea
+          id="message"
+          value={message}
+          onChange={handleMessageChange}
+          className="w-full bg-transparent border-b border-b-gray-600 outline-none rounded px-3 py-2"
+          rows={4}
+        />
+        {errors.message && (
+          <span className="text-red-500 text-sm">{errors.message}</span>
+        )}
+      </div>
+
+      <Button
+        type="submit"
+        className={`w-full bg-blue-600 font-bold text-white rounded py-2 ${
+          isSubmitting || Object.values(errors).some(Boolean)
+            ? "opacity-50 cursor-not-allowed"
+            : "active:translate-y-0.5 ease-in-out duration-300"
+        }`}
+        disabled={isSubmitting || Object.values(errors).some(Boolean)}
+      >
+        {isSubmitting ? "Submitting..." : "Submit"}
+      </Button>
+    </form>
+  );
+};

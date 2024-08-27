@@ -7,6 +7,7 @@ import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { Button } from "../ui/button";
 import { sendEmail } from "@/lib/actions/sendEmail.action";
+import { toast } from "../ui/use-toast";
 
 const ContactForm = () => {
   const ref = useRef(null);
@@ -144,7 +145,7 @@ interface FormErrors {
   message?: string;
 }
 
-export const Form: React.FC = () => {
+const Form: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -226,25 +227,36 @@ export const Form: React.FC = () => {
     setErrors(formErrors);
 
     if (Object.keys(formErrors).length === 0) {
-      setIsSubmitting(true); // Set submitting state to true
+      setIsSubmitting(true);
 
       try {
         const response = await sendEmail(name, email, phone, message);
 
         if (response.success) {
-          alert("Email sent successfully!");
+          toast({
+            title: "Email sent successfully!",
+            description: "We'll reach out to you very soon.",
+          });
           setName("");
           setEmail("");
           setPhone("");
           setMessage("");
         } else {
-          alert("Failed to send email. Please try again later.");
+          toast({
+            title: "Failed to send email.",
+            description: "Please try again later.",
+            variant: "destructive",
+          });
         }
       } catch (error) {
         console.error("Error submitting form:", error);
-        alert("An unexpected error occurred. Please try again later.");
+        toast({
+          title: "An unexpected error occurred.",
+          description: "Please try again later.",
+          variant: "destructive",
+        });
       } finally {
-        setIsSubmitting(false); // Reset submitting state
+        setIsSubmitting(false);
       }
     }
   };
@@ -322,7 +334,7 @@ export const Form: React.FC = () => {
 
       <Button
         type="submit"
-        className={`w-full bg-blue-600 text-white rounded py-2 ${
+        className={`w-full bg-blue-600 font-bold text-white rounded py-2 ${
           isSubmitting || Object.values(errors).some(Boolean)
             ? "opacity-50 cursor-not-allowed"
             : "active:translate-y-0.5 ease-in-out duration-300"

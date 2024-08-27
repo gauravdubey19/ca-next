@@ -94,6 +94,16 @@
   }
 }
 
+::-webkit-scrollbar-thumb {
+  @apply rounded-full;
+}
+.scroll-div::-webkit-scrollbar {
+  @apply w-[2px] h-[2px] bg-transparent;
+}
+.scroll-div::-webkit-scrollbar-thumb {
+  @apply bg-[#7977C6] rounded-full;
+}
+
 .perspective {
   perspective: 1000px;
 }
@@ -109,8 +119,6 @@
 .rotateY-180 {
   transform: rotateY(180deg);
 }
-
-/* In your global CSS file or TailwindCSS file */
 
 .hover-link {
   @apply uppercase no-underline inline-block relative;

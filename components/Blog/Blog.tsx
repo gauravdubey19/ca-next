@@ -83,7 +83,9 @@ const Posts = ({ posts = [] }: { posts: SanityDocument[] }) => {
               />
             </div>
             <div className="p-4">
-              <h3 className="text-lg font-bold mb-1">{post.title}</h3>
+              <h3 className="text-lg font-bold line-clamp-2 mb-1">
+                {post.title}
+              </h3>
               <Link
                 href={`/blog/${post.authorSlug?.current}/${post.slug?.current}`}
                 className="inline-flex items-center text-zinc-900 transition-colors duration-300 group-hover:underline underline-offset-4 text-sm"

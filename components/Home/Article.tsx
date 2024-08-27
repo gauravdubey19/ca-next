@@ -54,8 +54,8 @@ const Article = ({ posts = [] }: { posts: SanityDocument[] }) => {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="text-lg font-bold mb-1">{article.title}</h3>
+              <div className="p-4 ">
+                <h3 className="text-lg font-bold line-clamp-2 mb-1">{article.title}</h3>
                 <Link
                   href={`/blog/${article.authorSlug?.current}/${article.slug?.current}`}
                   className="inline-flex items-center text-zinc-900 transition-colors duration-300 group-hover:underline underline-offset-4 text-sm"
