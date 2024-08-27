@@ -20,6 +20,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
+import { LuMenu } from "react-icons/lu";
 
 const MobileNav = () => {
   const pathname = usePathname();
@@ -33,7 +34,7 @@ const MobileNav = () => {
     setOpen(!isOpen);
   };
 
-  const handleLinkClick = (head: string) => {
+  const handleLinkClick = () => {
     setOpen(false);
   };
 
@@ -58,18 +59,13 @@ const MobileNav = () => {
 
   return (
     <div className="md:hidden">
-      <Sheet open={isOpen} onOpenChange={setOpen}>
+      <Sheet>
         <SheetTrigger asChild className="w-fit h-fit overflow-hidden">
           <div
             onClick={handleMenuClick}
             className="w-fit h-fit border border-black rounded-md animate-slide-down"
           >
-            <Hamburger
-              toggled={isOpen}
-              toggle={setOpen}
-              direction="left"
-              size={25}
-            />
+            <LuMenu size={35} />
           </div>
         </SheetTrigger>
         <SheetContent
@@ -78,14 +74,7 @@ const MobileNav = () => {
           closeIcon={false}
         >
           <SheetTitle className="w-full h-fit flex flex-col items-end text-white">
-            <SheetClose className="text-3xl">
-              <Hamburger
-                toggled={isOpen}
-                toggle={setOpen}
-                direction="left"
-                size={28}
-              />
-            </SheetClose>
+            <SheetClose className="text-4xl font-thin mr-2">X</SheetClose>
           </SheetTitle>
 
           <div className="h-fit flex flex-col gap-6 pt-5 overflow-hidden">
@@ -96,18 +85,19 @@ const MobileNav = () => {
                 <div
                   key={index}
                   className="cursor-pointer z-50"
-                  onClick={() => handleLinkClick(link.head)}
+                  onClick={handleLinkClick}
                 >
                   {!link.pages ? (
-                    <Link
-                      href={link.href}
-                      className={`w-full capitalize text-2xl ${
-                        isActive
-                          ? "font-semibold border-b"
-                          : "active:translate-y-0.5"
-                      }`}
-                    >
-                      {link.head}
+                    <Link href={link.href}>
+                      <SheetClose
+                        className={`w-fit capitalize text-2xl ${
+                          isActive
+                            ? "font-semibold border-b"
+                            : "active:translate-y-0.5"
+                        }`}
+                      >
+                        {link.head}
+                      </SheetClose>
                     </Link>
                   ) : (
                     <Accordion
@@ -119,10 +109,10 @@ const MobileNav = () => {
                         <AccordionTrigger className="w-full text-2xl">
                           {link.head}
                         </AccordionTrigger>
-                        <AccordionContent className="w-full text-md md:text-lg">
+                        <AccordionContent className="w-full flex flex-col text-xl">
                           {link.pages.map((p, index) => (
                             <Link href={p.href} key={index}>
-                              {p.head}
+                              <SheetClose>{p.head}</SheetClose>
                             </Link>
                           ))}
                         </AccordionContent>

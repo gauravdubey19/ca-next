@@ -1,12 +1,12 @@
 import { SanityDocument } from "next-sanity";
-import { singlePostQuery } from "@/sanity/lib/queries";
+import { singlewhatWeDoQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { WWDDetailParams } from "@/lib/types";
 import BlogPostDetail from "@/components/Blog/BlogPostDetail";
 
 export default async function BlogDetailPage({ params }: WWDDetailParams) {
   const post = await sanityFetch<SanityDocument>({
-    query: singlePostQuery,
+    query: singlewhatWeDoQuery,
     params,
   });
 

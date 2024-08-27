@@ -41,7 +41,7 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
               width={400}
               height={600}
               objectFit="cover"
-              className="w-full h-full"
+              className="w-full h-full object-cover"
             />
           </motion.div>
         )}

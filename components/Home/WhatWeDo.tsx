@@ -42,7 +42,7 @@ const WhatWeDo = ({ whatWeDos = [] }: { whatWeDos: SanityDocument[] }) => {
         <div className="hidden sm:grid grid-cols-1 sm:gap-8 sm:grid-cols-2 md:grid-cols-3 mt-10 overflow-x-scroll md:overflow-visible no-scrollbar snap-x snap-mandatory md:snap-none">
           {whatWeDos
             .slice(0, 3)
-            .map(({ _id, title, imageURL, slug, authorSlug, body }, index) => (
+            .map(({ _id, title, imageURL, slug, body }, index) => (
               <motion.div
                 variants={fadeInOut("left", "tween", 0.2, 0.5 * index)}
                 initial="hidden"
@@ -59,7 +59,7 @@ const WhatWeDo = ({ whatWeDos = [] }: { whatWeDos: SanityDocument[] }) => {
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>
-                <div className="p-4 md:p-6">
+                <div className="py-4 md:py-6">
                   <h3 className="text-lg md:text-xl font-bold mb-2 line-clamp-1">
                     {title}
                   </h3>
@@ -68,7 +68,7 @@ const WhatWeDo = ({ whatWeDos = [] }: { whatWeDos: SanityDocument[] }) => {
                     {body[0].children[0]?.text}
                   </p>
                   <Link
-                    href={`/blog/what-we-do/${authorSlug?.current}/${slug?.current}`}
+                    href={`/blog/what-we-do/${slug?.current}`}
                     className="inline-flex items-center text-zinc-100 transition-colors duration-300 group-hover:underline underline-offset-4"
                     prefetch={false}
                     aria-label={`Learn more about ${title}`}
@@ -90,44 +90,42 @@ const WhatWeDo = ({ whatWeDos = [] }: { whatWeDos: SanityDocument[] }) => {
           >
             {whatWeDos
               .slice(0, 3)
-              .map(
-                ({ _id, title, imageURL, slug, authorSlug, body }, index) => (
-                  <motion.div
-                    variants={fadeInOut("left", "tween", 0.2, 0.5 * index)}
-                    initial="hidden"
-                    animate={isInView ? "show" : "exit"}
-                    key={index || _id}
-                    className="group text-white p-4"
-                  >
-                    <div className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
-                      <Image
-                        src={imageURL}
-                        alt={title}
-                        width={400}
-                        height={200}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                    </div>
-                    <div className="p-4">
-                      <h3 className="text-lg font-bold mb-2 line-clamp-1">
-                        {title}
-                      </h3>
-                      <p className="text-zinc-200 mb-4 text-sm line-clamp-3">
-                        {body[0].children[0]?.text}
-                      </p>
-                      <Link
-                        href={`/blog/what-we-do/${authorSlug?.current}/${slug?.current}`}
-                        className="inline-flex items-center text-zinc-100 transition-colors duration-300 group-hover:underline underline-offset-4"
-                        prefetch={false}
-                        aria-label={`Learn more about ${title}`}
-                      >
-                        Check out Case Study
-                        <MdArrowForward className="ml-1 w-4 h-4" />
-                      </Link>
-                    </div>
-                  </motion.div>
-                )
-              )}
+              .map(({ _id, title, imageURL, slug, body }, index) => (
+                <motion.div
+                  variants={fadeInOut("left", "tween", 0.2, 0.5 * index)}
+                  initial="hidden"
+                  animate={isInView ? "show" : "exit"}
+                  key={index || _id}
+                  className="group text-white p-4"
+                >
+                  <div className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
+                    <Image
+                      src={imageURL}
+                      alt={title}
+                      width={400}
+                      height={200}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                  </div>
+                  <div className="py-4">
+                    <h3 className="text-lg font-bold mb-2 line-clamp-1">
+                      {title}
+                    </h3>
+                    <p className="text-zinc-200 mb-4 text-sm line-clamp-3">
+                      {body[0].children[0]?.text}
+                    </p>
+                    <Link
+                      href={`/blog/what-we-do/${slug?.current}`}
+                      className="inline-flex items-center text-zinc-100 transition-colors duration-300 group-hover:underline underline-offset-4"
+                      prefetch={false}
+                      aria-label={`Learn more about ${title}`}
+                    >
+                      Check out Case Study
+                      <MdArrowForward className="ml-1 w-4 h-4" />
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
           </Carousel>
         </div>
       </div>
