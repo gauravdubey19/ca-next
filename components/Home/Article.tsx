@@ -26,7 +26,7 @@ const Article = ({ posts = [] }: { posts: SanityDocument[] }) => {
           className="flex-center rounded-full bg-zinc-300 text-sm md:text-lg font-light shadow-lg px-5 py-3 text-center"
         >
           <PiHandshakeLight size={20} className="mr-1" />
-          We Are Here For Your Tax Relief.
+          Expert Guidance for Your Tax Relief Needs
         </motion.p>
         <motion.h2
           variants={fadeInOut("down", "tween", 0.2, 0.8)}
@@ -34,7 +34,7 @@ const Article = ({ posts = [] }: { posts: SanityDocument[] }) => {
           animate={isInView ? "show" : "exit"}
           className="text-center text-2xl md:text-4xl font-extrabold"
         >
-          Our Service is built specifically for your businesses.
+          Tailored Services Designed for Your Business
         </motion.h2>
         <div className="w-full grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 mt-5 lg:mt-8">
           {posts.slice(0, 3).map((article, index) => (
@@ -55,9 +55,11 @@ const Article = ({ posts = [] }: { posts: SanityDocument[] }) => {
                 />
               </div>
               <div className="p-4 ">
-                <h3 className="text-lg font-bold line-clamp-2 mb-1">{article.title}</h3>
+                <h3 className="text-lg font-bold line-clamp-2 mb-1">
+                  {article.title}
+                </h3>
                 <Link
-                  href={`/blog/${article.authorSlug?.current}/${article.slug?.current}`}
+                  href={`/blog/post/${article.authorSlug?.current}/${article.slug?.current}`}
                   className="inline-flex items-center text-zinc-900 transition-colors duration-300 group-hover:underline underline-offset-4 text-sm"
                   prefetch={false}
                   aria-label={`Learn more about ${article.title}`}

@@ -202,3 +202,36 @@ export const a = "b";
 //     ctaText: "Read More",
 //   },
 // ];
+
+// const services = [
+//   {
+//     id: 1,
+//     title: "Operational Excellence",
+//     description:
+//       "Enhance your operations to achieve efficiency and excellence.",
+//     image:
+//       "https://cdn.prod.website-files.com/5f55ff47b6d23a11cb496a69/633d4bb18c35be84fb7ab5ef_pexels-thirdman-7994325.jpg",
+//     link: "#",
+//     ctaText: "Check out Case Study",
+//   },
+//   {
+//     id: 2,
+//     title: "Analytics Consulting",
+//     description:
+//       "Leverage data-driven insights to propel your business forward.",
+//     image:
+//       "https://media.istockphoto.com/id/1408262049/photo/female-co-workers-meet-to-discuss-project.jpg?s=612x612&w=0&k=20&c=thl6QqXI4ple0-0eL8asWpaUGPEehbPz2F96YskcR9U=",
+//     link: "#",
+//     ctaText: "Check out Case Study",
+//   },
+//   {
+//     id: 3,
+//     title: "Analytics Strategy",
+//     description:
+//       "Develop a robust analytics strategy to stay ahead of the curve.",
+//     image:
+//       "https://img.freepik.com/free-photo/person-presenting-their-job-resignation_23-2149445124.jpg",
+//     link: "#",
+//     ctaText: "Check out Case Study",
+//   },
+// ];

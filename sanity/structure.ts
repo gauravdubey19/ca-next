@@ -13,6 +13,6 @@ export const structure: StructureResolver = (S) =>
       ...S.documentTypeListItems().filter(
         (item) =>
           item.getId() &&
-          !["post", "category", "author"].includes(item.getId()!)
+          !["post", "what-we-do", "category", "author"].includes(item.getId()!)
       ),
     ]);

@@ -34,7 +34,7 @@ const Navbar: React.FC<{ appName?: string }> = ({ appName = "LOGO" }) => {
 
   return (
     <div
-      className={`sticky top-0 z-50 h-[60px] w-full flex-between ${
+      className={`sticky top-0 z-[999] h-[60px] w-full flex-between ${
         isScrolled ? "bg-white" : pathname === "/" ? "bg-white" : "bg-[#E7E8F4]"
       } text-black p-2 px-4 md:px-6 lg:px-20 xl:px-28 2xl:px-32 transition-colors duration-300`}
     >
@@ -53,7 +53,7 @@ const Navbar: React.FC<{ appName?: string }> = ({ appName = "LOGO" }) => {
 
       <MobileNav />
       <NavigationMenu className="hidden md:flex">
-        <NavigationMenuList className="relative hidden md:flex items-center gap-4 md:gap-5 lg:gap-7 xl:gap-10 animate-slide-down text-sm font-thin">
+        <NavigationMenuList className="relative hidden md:flex items-center gap-4 md:gap-5 lg:gap-7 xl:gap-10 animate-slide-down text-md font-thin">
           {links.map((link, index) => {
             const isActive = pathname === link.href;
             return (

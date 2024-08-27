@@ -12,12 +12,6 @@ export const postsQuery = groq`*[_type == "post"] {
   "authorSlug": author->slug
 }`;
 
-export const categoriesQuery = groq`*[_type == "category"] {
-  _id,
-  title,
-  description,
-  "slug": slug.current
-}`;
 // author->name == $author &&
 export const singlePostQuery = groq`*[_type == "post" &&  slug.current == $slug][0]{
   _id,
@@ -33,6 +27,43 @@ export const singlePostQuery = groq`*[_type == "post" &&  slug.current == $slug]
   publishedAt,
   "slug": slug.current,
   "imageURL": mainImage.asset->url,
+}`;
+
+// Get all what-we-do
+export const whatWeDoQuery = groq`*[_type == "what-we-do"] {
+  _createdAt,
+  title,
+  description,
+  slug,
+  mainImage,
+  "imageURL": mainImage.asset->url,
+  "authorName": author->name,
+  "authorSlug": author->slug,
+  body,
+}`;
+
+// author->name == $author &&
+export const singlewhatWeDoQuery = groq`*[_type == "what-we-do" &&  slug.current == $slug][0]{
+  _id,
+  title,
+  description,
+  mainImage,
+  body,
+  "authorName": author->name,
+  "authorBio": author->bio,
+  "authorImage": author->image.asset->url,
+  "categoryName": category->title,
+  "categorySlug": category->slug.current,
+  publishedAt,
+  "slug": slug.current,
+  "imageURL": mainImage.asset->url,
+}`;
+
+export const categoriesQuery = groq`*[_type == "category"] {
+  _id,
+  title,
+  description,
+  "slug": slug.current
 }`;
 
 // // Get a single post by its slug

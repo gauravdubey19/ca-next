@@ -3,17 +3,13 @@ import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const whatWeDoType = defineType({
   name: "what-we-do",
-  title: "what We Do",
+  title: "What We Do",
   type: "document",
   icon: DocumentTextIcon,
   fields: [
     defineField({
       name: "title",
       type: "string",
-    }),
-    defineField({
-      name: "description",
-      type: "text",
     }),
     defineField({
       name: "slug",

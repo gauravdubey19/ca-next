@@ -8,10 +8,12 @@ import Carousel from "../ui/Carousel";
 import { motion, useInView } from "framer-motion";
 import { fadeInOut } from "@/lib/utils";
 import { PiHandshakeLight } from "react-icons/pi";
+import { SanityDocument } from "next-sanity";
 
-const WhatWeDo = () => {
+const WhatWeDo = ({ whatWeDos = [] }: { whatWeDos: SanityDocument[] }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
+  // console.log(whatWeDos);
 
   return (
     <section
@@ -25,8 +27,8 @@ const WhatWeDo = () => {
           animate={isInView ? "show" : "exit"}
           className="flex-center rounded-full bg-zinc-300 text-sm md:text-lg font-light shadow-lg px-5 py-3 text-center"
         >
-          <PiHandshakeLight size={20} className="mr-1" /> We Are Here For Your
-          Tax Relief.
+          <PiHandshakeLight size={20} className="mr-1" /> We offer solutions for
+          your tax relief.
         </motion.p>
         <motion.h2
           variants={fadeInOut("left", "tween", 0.2, 0.8)}
@@ -34,22 +36,23 @@ const WhatWeDo = () => {
           animate={isInView ? "show" : "exit"}
           className="text-center text-2xl md:text-4xl font-extrabold text-white"
         >
-          Our Service is built specifically for your businesses.
+          We create meaningful work experiences for everyone, everywhere.
         </motion.h2>
 
         <div className="hidden sm:grid grid-cols-1 sm:gap-8 sm:grid-cols-2 md:grid-cols-3 mt-10 overflow-x-scroll md:overflow-visible no-scrollbar snap-x snap-mandatory md:snap-none">
-          {services.map(
-            ({ id, title, description, image, link, ctaText }, index) => (
+          {whatWeDos
+            .slice(0, 3)
+            .map(({ _id, title, imageURL, slug, authorSlug, body }, index) => (
               <motion.div
                 variants={fadeInOut("left", "tween", 0.2, 0.5 * index)}
                 initial="hidden"
                 animate={isInView ? "show" : "exit"}
-                key={id}
+                key={_id}
                 className="group text-white snap-center shrink-0"
               >
                 <div className="w-full h-80 lg:h-96 overflow-hidden rounded-lg shadow-lg">
                   <Image
-                    src={image}
+                    src={imageURL}
                     alt={title}
                     width={400}
                     height={200}
@@ -57,23 +60,25 @@ const WhatWeDo = () => {
                   />
                 </div>
                 <div className="p-4 md:p-6">
-                  <h3 className="text-lg md:text-xl font-bold mb-2">{title}</h3>
-                  <p className="text-zinc-200 mb-4 text-sm md:text-base">
-                    {description}
+                  <h3 className="text-lg md:text-xl font-bold mb-2 line-clamp-1">
+                    {title}
+                  </h3>
+                  <p className="text-zinc-200 mb-4 text-sm md:text-base line-clamp-3">
+                    {/* {description} */}
+                    {body[0].children[0]?.text}
                   </p>
                   <Link
-                    href={link}
+                    href={`/blog/what-we-do/${authorSlug?.current}/${slug?.current}`}
                     className="inline-flex items-center text-zinc-100 transition-colors duration-300 group-hover:underline underline-offset-4"
                     prefetch={false}
                     aria-label={`Learn more about ${title}`}
                   >
-                    {ctaText}
+                    Check out Case Study
                     <MdArrowForward className="ml-1 w-4 h-4" />
                   </Link>
                 </div>
               </motion.div>
-            )
-          )}
+            ))}
         </div>
 
         <div className="w-full sm:hidden mt-10">
@@ -83,40 +88,46 @@ const WhatWeDo = () => {
             arrows={false}
             autoplaySpeed={3000}
           >
-            {services.map(
-              ({ id, title, description, image, link, ctaText }, index) => (
-                <motion.div
-                  variants={fadeInOut("left", "tween", 0.2, 0.5 * id)}
-                  initial="hidden"
-                  animate={isInView ? "show" : "exit"}
-                  key={index || id}
-                  className="group text-white p-4"
-                >
-                  <div className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
-                    <Image
-                      src={image}
-                      alt={title}
-                      width={400}
-                      height={200}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-lg font-bold mb-2">{title}</h3>
-                    <p className="text-zinc-200 mb-4 text-sm">{description}</p>
-                    <Link
-                      href={link}
-                      className="inline-flex items-center text-zinc-100 transition-colors duration-300 group-hover:underline underline-offset-4"
-                      prefetch={false}
-                      aria-label={`Learn more about ${title}`}
-                    >
-                      {ctaText}
-                      <MdArrowForward className="ml-1 w-4 h-4" />
-                    </Link>
-                  </div>
-                </motion.div>
-              )
-            )}
+            {whatWeDos
+              .slice(0, 3)
+              .map(
+                ({ _id, title, imageURL, slug, authorSlug, body }, index) => (
+                  <motion.div
+                    variants={fadeInOut("left", "tween", 0.2, 0.5 * index)}
+                    initial="hidden"
+                    animate={isInView ? "show" : "exit"}
+                    key={index || _id}
+                    className="group text-white p-4"
+                  >
+                    <div className="w-full h-80 overflow-hidden rounded-lg shadow-lg">
+                      <Image
+                        src={imageURL}
+                        alt={title}
+                        width={400}
+                        height={200}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-lg font-bold mb-2 line-clamp-1">
+                        {title}
+                      </h3>
+                      <p className="text-zinc-200 mb-4 text-sm line-clamp-3">
+                        {body[0].children[0]?.text}
+                      </p>
+                      <Link
+                        href={`/blog/what-we-do/${authorSlug?.current}/${slug?.current}`}
+                        className="inline-flex items-center text-zinc-100 transition-colors duration-300 group-hover:underline underline-offset-4"
+                        prefetch={false}
+                        aria-label={`Learn more about ${title}`}
+                      >
+                        Check out Case Study
+                        <MdArrowForward className="ml-1 w-4 h-4" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                )
+              )}
           </Carousel>
         </div>
       </div>
@@ -125,36 +136,3 @@ const WhatWeDo = () => {
 };
 
 export default WhatWeDo;
-
-const services = [
-  {
-    id: 1,
-    title: "Operational Excellence",
-    description:
-      "Enhance your operations to achieve efficiency and excellence.",
-    image:
-      "https://cdn.prod.website-files.com/5f55ff47b6d23a11cb496a69/633d4bb18c35be84fb7ab5ef_pexels-thirdman-7994325.jpg",
-    link: "#",
-    ctaText: "Check out Case Study",
-  },
-  {
-    id: 2,
-    title: "Analytics Consulting",
-    description:
-      "Leverage data-driven insights to propel your business forward.",
-    image:
-      "https://media.istockphoto.com/id/1408262049/photo/female-co-workers-meet-to-discuss-project.jpg?s=612x612&w=0&k=20&c=thl6QqXI4ple0-0eL8asWpaUGPEehbPz2F96YskcR9U=",
-    link: "#",
-    ctaText: "Check out Case Study",
-  },
-  {
-    id: 3,
-    title: "Analytics Strategy",
-    description:
-      "Develop a robust analytics strategy to stay ahead of the curve.",
-    image:
-      "https://img.freepik.com/free-photo/person-presenting-their-job-resignation_23-2149445124.jpg",
-    link: "#",
-    ctaText: "Check out Case Study",
-  },
-];

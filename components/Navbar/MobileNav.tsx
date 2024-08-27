@@ -14,6 +14,12 @@ import { links } from "@/lib/data";
 import { BsTelephone } from "react-icons/bs";
 import { usePathname } from "next/navigation";
 import { MdOutlineMail } from "react-icons/md";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion";
 
 const MobileNav = () => {
   const pathname = usePathname();
@@ -92,16 +98,37 @@ const MobileNav = () => {
                   className="cursor-pointer z-50"
                   onClick={() => handleLinkClick(link.head)}
                 >
-                  <Link
-                    href={link.href}
-                    className={`w-full capitalize text-2xl ${
-                      isActive
-                        ? "font-semibold border-b"
-                        : "active:translate-y-0.5"
-                    }`}
-                  >
-                    {link.head}
-                  </Link>
+                  {!link.pages ? (
+                    <Link
+                      href={link.href}
+                      className={`w-full capitalize text-2xl ${
+                        isActive
+                          ? "font-semibold border-b"
+                          : "active:translate-y-0.5"
+                      }`}
+                    >
+                      {link.head}
+                    </Link>
+                  ) : (
+                    <Accordion
+                      type="single"
+                      collapsible
+                      className="w-full -mt-3"
+                    >
+                      <AccordionItem value="item-1">
+                        <AccordionTrigger className="w-full text-2xl">
+                          {link.head}
+                        </AccordionTrigger>
+                        <AccordionContent className="w-full text-md md:text-lg">
+                          {link.pages.map((p, index) => (
+                            <Link href={p.href} key={index}>
+                              {p.head}
+                            </Link>
+                          ))}
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
+                  )}
                 </div>
               );
             })}
