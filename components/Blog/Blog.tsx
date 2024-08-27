@@ -8,7 +8,7 @@ import { fadeInOut } from "@/lib/utils";
 import { motion, useInView } from "framer-motion";
 import { MdArrowForward } from "react-icons/md";
 const Blog = ({ posts = [] }: { posts?: SanityDocument[] }) => {
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <>
@@ -57,7 +57,7 @@ const Hero = () => {
 
 const Posts = ({ posts = [] }: { posts: SanityDocument[] }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3 });
+  const isInView = useInView(ref, { amount: 0.2 });
 
   return (
     <section

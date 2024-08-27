@@ -145,19 +145,19 @@ const contact: ContactProps[] = [
   {
     id: "phone",
     lable: "+91 7647867870",
-    href: "/tel:7647867870",
+    href: "tel:+917647867870",
     icon: <BsTelephone size={22} />,
   },
   {
     id: "phone",
     lable: "+91 7312405500",
-    href: "/tel:7312405500",
+    href: "tel:+917312405500",
     icon: <BsTelephone size={22} />,
   },
   {
     id: "email",
     lable: "audit@patelngupta.com",
-    href: "/mailto:audit@patelngupta.com",
+    href: "mailto:audit@patelngupta.com",
     icon: <MdOutlineMail size={22} />,
   },
 ];

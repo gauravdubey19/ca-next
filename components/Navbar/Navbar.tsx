@@ -62,7 +62,7 @@ const Navbar: React.FC<{ appName?: string }> = ({ appName = "LOGO" }) => {
       </nav>
 
       <Link
-        href={"/contact"}
+        href={"tel:+917647867870"}
         className="relative hidden animate-slide-down group w-fit h-10 md:h-14 lg:flex items-center gap-2 p-1 overflow-hidden"
       >
         <div className="w-8 h-8 lg:w-10 lg:h-10 p-1 flex-center rounded-full bg-[#7a77c641] group-hover:bg-transparent group-hover:border group-hover:border-[#7a77c6d2] ease-in-out duration-300">
