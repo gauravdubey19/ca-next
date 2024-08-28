@@ -5,14 +5,12 @@ import Image from "next/image";
 import { SanityDocument } from "next-sanity";
 import { motion } from "framer-motion";
 import { fadeInOut } from "@/lib/utils";
-import { useRouter } from "next/navigation";
 
 interface BlogPostDetailProps {
   post: SanityDocument;
 }
 
 const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
-  // const router = useRouter();
   const {
     title,
     imageURL,
@@ -24,8 +22,6 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
     body,
   } = post;
   console.log(post);
-
-  // if (!post) router.back();
 
   return (
     <article className="w-full h-fit bg-gradient-to-b from-[#E7E8F4] to-white overflow-hidden">
@@ -115,20 +111,6 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
                   {p.children[0]?.text}
                 </motion.p>
               ))}
-            {/* {body &&
-              body.map((block: any, index: number) => (
-                <motion.p
-                  key={index}
-                  variants={fadeInOut("down", "tween", 0.2, 0.8 * index)}
-                  initial="hidden"
-                  whileInView="show"
-                  animate="show"
-                  className="text-lg text-gray-600"
-                >
-                  {/* {description} */}
-            {/* {block.children[0]?.text}
-                </motion.p>
-              ))} */}
           </section>
         </div>
       </div>

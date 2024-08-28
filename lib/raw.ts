@@ -235,3 +235,22 @@ export const a = "b";
 //     ctaText: "Check out Case Study",
 //   },
 // ];
+
+{
+  /* {body &&
+              body.map((block: any, index: number) => (
+                <motion.p
+                  key={index}
+                  variants={fadeInOut("down", "tween", 0.2, 0.8 * index)}
+                  initial="hidden"
+                  whileInView="show"
+                  animate="show"
+                  className="text-lg text-gray-600"
+                >
+                  {/* {description} */
+}
+{
+  /* {block.children[0]?.text}
+                </motion.p>
+              ))} */
+}

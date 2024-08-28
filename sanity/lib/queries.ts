@@ -4,7 +4,6 @@ import { groq } from "next-sanity";
 export const postsQuery = groq`*[_type == "post"] {
   _createdAt,
   title,
-  description,
   slug,
   mainImage,
   "imageURL": mainImage.asset->url,
@@ -16,7 +15,6 @@ export const postsQuery = groq`*[_type == "post"] {
 export const singlePostQuery = groq`*[_type == "post" &&  slug.current == $slug][0]{
   _id,
   title,
-  description,
   mainImage,
   body,
   "authorName": author->name,
@@ -33,7 +31,6 @@ export const singlePostQuery = groq`*[_type == "post" &&  slug.current == $slug]
 export const whatWeDoQuery = groq`*[_type == "what-we-do"] {
   _createdAt,
   title,
-  description,
   slug,
   mainImage,
   "imageURL": mainImage.asset->url,
@@ -46,7 +43,6 @@ export const whatWeDoQuery = groq`*[_type == "what-we-do"] {
 export const singlewhatWeDoQuery = groq`*[_type == "what-we-do" &&  slug.current == $slug][0]{
   _id,
   title,
-  description,
   mainImage,
   body,
   "authorName": author->name,
@@ -62,7 +58,6 @@ export const singlewhatWeDoQuery = groq`*[_type == "what-we-do" &&  slug.current
 export const categoriesQuery = groq`*[_type == "category"] {
   _id,
   title,
-  description,
   "slug": slug.current
 }`;
 
