@@ -5,12 +5,14 @@ import Image from "next/image";
 import { SanityDocument } from "next-sanity";
 import { motion } from "framer-motion";
 import { fadeInOut } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 interface BlogPostDetailProps {
   post: SanityDocument;
 }
 
 const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
+  // const router = useRouter();
   const {
     title,
     imageURL,
@@ -21,7 +23,9 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
     publishedAt,
     body,
   } = post;
-  // console.log(body);
+  console.log(post);
+
+  // if (!post) router.back();
 
   return (
     <article className="w-full h-fit bg-gradient-to-b from-[#E7E8F4] to-white overflow-hidden">
