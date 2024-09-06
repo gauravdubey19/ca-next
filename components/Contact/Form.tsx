@@ -50,12 +50,12 @@ const ContactForm = () => {
           >
             Email
           </motion.p>
-          <Link target="_blank" href="/mailto:audit@patelngupta.com">
+          <Link target="_blank" href="mailto:audit@patelngupta.com">
             <motion.p
               variants={fadeInOut("right", "tween", 0.2, 1.5)}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
-              className="text-sm md:text-md text-balance font-thin text-[#7977C6] hover-link"
+              className="w-fit text-sm md:text-md text-balance font-thin text-[#7977C6] hover-link"
             >
               audit@patelngupta.com
             </motion.p>
@@ -78,8 +78,8 @@ const ContactForm = () => {
           >
             <Link
               target="_blank"
-              href="/tel:7647867870"
-              className="text-[#7977C6] hover-link"
+              href="tel:7647867870"
+              className="w-fit text-[#7977C6] hover-link"
             >
               +91 7647867870
             </Link>
@@ -92,8 +92,8 @@ const ContactForm = () => {
           >
             <Link
               target="_blank"
-              href="/tel:7312405500"
-              className="text-[#7977C6] hover-link"
+              href="tel:7312405500"
+              className="w-fit text-[#7977C6] hover-link"
             >
               +91 7312405500
             </Link>
@@ -116,7 +116,7 @@ const ContactForm = () => {
               variants={fadeInOut("right", "tween", 0.2, 3)}
               initial="hidden"
               animate={isInView ? "show" : "hidden"}
-              className="text-sm md:text-md text-balance font-thin text-[#7977C6] hover-link"
+              className="w-fit text-sm md:text-md text-balance font-thin text-[#7977C6] hover-link"
             >
               543-544, 4th Floor: Vikram Tower, Sapna Sangeeta Road. Indore
               (M.P) 452001
