@@ -171,7 +171,7 @@ const Business = () => {
   return (
     <section
       ref={ref}
-      className="w-full h-fit flex-between flex-col lg:flex-row gap-4 md:gap-8 lg:gap-10 bg-[#E7E8F4] space-y-4 md:space-y-6 p-4 lg:px-[120px] lg:py-10 overflow-hidden"
+      className="w-full h-fit flex justify-between flex-col lg:flex-row gap-4 md:gap-8 lg:gap-10 bg-[#E7E8F4] space-y-4 md:space-y-6 p-4 lg:px-[120px] lg:py-10 overflow-hidden"
     >
       <motion.div
         variants={fadeInOut("right", "tween", 0.2, 0.5)}
@@ -216,11 +216,10 @@ const Business = () => {
               animate={isInView ? "show" : "exit"}
               className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
             >
-              The firm {'"PATEL & GUPTA, Chartered Accountants"'} was
-              incorporated in the year 2000 as a partnership firm with four
-              partners. Our vision is to provide quality professional services
-              with greater accuracy and transparency through our multi-location
-              branches spread across states.
+              “PATEL & GUPTA, A Chartered Accountants firm was incorporated in
+              the year 2000 with four partners. We are a combination of
+              qualified and experienced professionals to cater the need of
+              high-tech professional services
             </motion.p>
             <motion.p
               variants={fadeInOut("left", "tween", 0.2, 1.2)}
@@ -228,12 +227,9 @@ const Business = () => {
               animate={isInView ? "show" : "exit"}
               className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
             >
-              We are also engaged in providing financial assistance from banks
-              and financial institutions through various loan options including
-              Term Loans, Short-term and Long-term Working Capital Loans,
-              Mortgage Loans, Unsecured Loans, Heavy Equipment/Machinery Loans,
-              Export Credit, LC, and Bank Guarantee Facilities, tailored to meet
-              the specific needs of our clients.
+              Our vision is to provide quality professional services with
+              greater accuracy and transparency through multiple branches spread
+              across various states
             </motion.p>
             <motion.p
               variants={fadeInOut("left", "tween", 0.2, 1.5)}
@@ -241,10 +237,33 @@ const Business = () => {
               animate={isInView ? "show" : "exit"}
               className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
             >
-              Our firm has previously been engaged for field audit and
+              Our moto is to assist client to become most competitive in the
+              market. Our mission is to excel through use of technology and
+              utilization of best expertise of human resources.
+            </motion.p>
+            <motion.p
+              variants={fadeInOut("left", "tween", 0.2, 1.8)}
+              initial="hidden"
+              animate={isInView ? "show" : "exit"}
+              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
+            >
+              Firm is also engaged in providing financial assistance from the
+              bank’s and FI’s by the way of Term Loan, Short term and long term
+              working capital Loan, Mortgage loan, unsecured Loans, Heavy
+              Equipment/Machinery Loans, Export Credit, LC, Bank guarantee
+              facility etc looking to the need & requirement best suited to the
+              clients.
+            </motion.p>
+            <motion.p
+              variants={fadeInOut("left", "tween", 0.2, 2.1)}
+              initial="hidden"
+              animate={isInView ? "show" : "exit"}
+              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
+            >
+              Our firm has also been engaged previously for field audit and
               documentation on behalf of Standard Chartered Bank for their
-              Supply Chain Finance product under Dealer Financing Flexiloan in
-              M.P., Gujarat, Rajasthan, and in exceptional cases, Haryana and
+              Supply Chain Finance product under Dealer Financing Flexi loan in
+              M.P., Gujrat, Rajasthan, and in exceptional cases Haryana and
               Punjab.
             </motion.p>
           </div>
