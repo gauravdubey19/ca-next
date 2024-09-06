@@ -21,41 +21,167 @@ export const services: ServiceValues[] = [
     id: 0,
     title: "Audit and Assurance Services",
     description:
-      "The audit clients of P&G today include corporates, banks, medium & small enterprises including family-owned businesses.",
-    detail:
-      "Our Audit and Assurance Services offer comprehensive evaluations to ensure that your financial statements are accurate and compliant with regulatory standards. We cater to a diverse clientele, including large corporations, financial institutions, and small to medium enterprises. Our expert team performs rigorous audits to provide you with reliable insights into your financial health, helping you to meet compliance requirements and make informed decisions. With a focus on precision and transparency, we aim to build trust and uphold the highest standards of financial integrity.",
+      "Historically Patel & Gupta (“P&G”) strength was in accounting, auditing and related services. The audit clients of P&G today include corporates, banks, medium & small enterprises including family-owned businesses.",
     icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business1.png",
-    link: "/service/0",
+    link: "/service/audit-and-assurance-services",
+    slug: "audit-and-assurance-services",
+    isDetail: true,
+    detail: [
+      {
+        id: 1,
+        para: "At P&G, we use a constructive approach in auditing. As a result of understanding the clients’ systems, procedures and practices, we often recommend an improvement for more efficient operation, stronger financial structure and improved accounting and administrative controls. Our philosophy and practice are to blend the technical, the practical and the business approach in each audit engagement.",
+      },
+      {
+        id: 2,
+        para: "P&G’s assignments also include investigations and financial reviews particularly of companies for mergers, takeovers and acquisitions.",
+      },
+      {
+        id: 3,
+        para: "P&G has considerable experience in auditing accounts of large private companies in manufacturing and service industries, Commercial Banks, Co-operative Sectors etc.",
+      },
+      {
+        id: 4,
+        para: "P&G also has vast and varied experience in concurrent audits and internal audits. Some of the sectors serviced are Bank Branches, Banking, Multilevel Marketing, Auto Distributor, Retail Stores, etc.",
+      },
+      {
+        id: 5,
+        para: "P&G Endeavour’s continuously to improve the quality of its audits. The mandatory two-tier review is one of the important features of P&G’s quality control procedures.",
+      },
+      {
+        id: 6,
+        para: "P&G has also conducted due diligence reviews for Indian clients proposing to acquire domestic businesses.",
+      },
+      {
+        id: 7,
+        para: "P&G undertakes the Tax audit of a significant number of clients along with the statutory audit. This offers a great synergy in the audit service and is a great value addition to the client during the completion of tax assessments and concerning tax advisory services in general.",
+      },
+      {
+        id: 8,
+        para: " P&G also undertakes compliance of various statutory requirements of clients under the company law (including company secretarial services), direct and indirect tax laws.",
+      },
+    ],
   },
   {
     id: 1,
     title: "Advisory Services",
     description:
-      "P&G provides advisory services relating to capital issues, financing options, management audits and helps draft financing proposals.",
-    detail:
-      "Our Advisory Services are designed to guide you through complex financial decisions and strategic planning. We specialize in capital raising, providing expert advice on financing options that best suit your business needs. Whether you are seeking to expand, restructure, or optimize your financial strategies, our team offers tailored solutions to help you achieve your goals. From management audits to drafting comprehensive financing proposals, we deliver actionable insights that drive growth and enhance operational efficiency. Trust us to be your partner in navigating financial challenges and seizing opportunities.",
+      "“P&G” provides advisory services relating to capital issues, financing options and helps draft financing proposals. We advise on a variety of corporate problems such as corporate recovery, investment evaluations, dealer network building, capital restructuring and spin-offs. We undertake management audits with a remedial approach to corporate problems. The management consulting services rendered by P&G deal with a wide range of problems within privately owned businesses, public sector corporations and banks.",
     icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business4.png",
-    link: "/service/1",
+    link: "/service/advisory-services",
+    slug: "advisory-services",
+    isDetail: true,
+    servicesIinclude: "Services include: ",
+    detail: [
+      {
+        id: 1,
+        para: "To develop accounting, budgeting, forecasting and other information systems and evaluation of alternative financial strategies.",
+      },
+      {
+        id: 2,
+        para: "To develop accounting, budgeting, forecasting and other information systems and evaluation of alternative financial strategies.",
+      },
+      {
+        id: 3,
+        para: "Systems development and systems audit.",
+      },
+      {
+        id: 4,
+        para: "Techno-economic studies, viability studies, project reports and project appraisals.",
+      },
+      {
+        id: 5,
+        para: "Recruitment of accounting and finance personnel.",
+      },
+      {
+        id: 6,
+        para: "Techno-Economic Viability Studies for small, medium and large-scale businesses.",
+      },
+      {
+        id: 7,
+        para: "Consultancy on nursing programmes and rehabilitation of sick units.",
+      },
+      {
+        id: 8,
+        para: "Working Capital Management.",
+      },
+      {
+        id: 9,
+        para: "Preparation of Project Reports, Project Appraisal.",
+      },
+      {
+        id: 10,
+        para: "Monitoring sick and difficult accounts of borrowers on behalf of Banks.",
+      },
+      {
+        id: 11,
+        para: "Negotiation for the acquisition of companies and this purpose preparation of reports and financial analysis.",
+      },
+      {
+        id: 12,
+        para: "Reports on amalgamation and mergers.",
+      },
+      {
+        id: 13,
+        para: "Management Audits, Stock Audits, including advice on improving systems, stocks levels etc.",
+      },
+      {
+        id: 14,
+        para: "Development and Installation of Management Information Systems Study, Systems Development, Installation and Evaluation of Controls.",
+      },
+      {
+        id: 15,
+        para: " While P&G’s role in the growth of a client’s commercial interest begins before the entity/organization comes into being, P&G plays an important role in setting up the operations by providing professional services in setting up the appropriate entity and getting the same ready for giving shape to the vision of the promoters.",
+      },
+    ],
   },
   {
     id: 2,
     title: "Taxation Services",
     description:
-      "P&G provides advisory services relating to capital issues, financing options, management audits and helps draft financing proposals.",
-    detail:
-      "Our Taxation Services offer expert guidance to navigate the complexities of tax regulations and optimize your tax position. We provide strategic advice on various tax matters, including compliance, planning, and risk management. Our services cover a wide range of areas such as corporate tax, VAT/GST, and personal tax planning. By leveraging our in-depth knowledge of tax laws and regulations, we help you minimize liabilities and ensure compliance while identifying opportunities for tax efficiencies. Partner with us to manage your tax obligations effectively and enhance your financial performance.",
+      "“P&G” offer comprehensive taxation services to both corporate and individual clients. Our direct tax services include tax representation, return preparation, and strategic tax planning, as well as advisory on reorganizations, mergers, and unique business scenarios. In the realm of indirect taxes, we provide expert guidance on Goods and Service Tax (GST), ensuring compliance and addressing daily operational needs. Additionally, we conduct thorough GST audits to align with regulatory requirements.",
     icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business3.png",
-    link: "/service/2",
+    link: "/service/taxation-services",
+    slug: "taxation-services",
+    taxes: [
+      {
+        id: 1,
+        head: "Direct Taxes",
+        para: "Patel & Gupta (“P&G”) provides comprehensive taxation services both corporate and individual which include tax representations, preparing tax returns and tax planning. P&G renders tax advisory services relating to reorganizations, mergers and special business situations.",
+      },
+      {
+        id: 2,
+        head: "Indirect Taxes",
+        para: "Goods and Service Tax (GST) is now a significant part of the day to day operations of Indian business. P&G has recognized the need to offer the service and synergize the commercial requirements of the client.  Apart from offering professional advice on day to day matters, P&G also undertakes GST audit in compliance with the GST Act.",
+      },
+    ],
+    isDetail: false,
   },
   {
     id: 3,
-    title: "Tax Planning & Consulting",
+    title: "Other Services",
     description:
-      "P&G provides strategize to your tax plan with our expert consulting services to optimize your financial outcomes.",
-    detail:
-      "Our Tax Planning & Consulting services are tailored to help you devise effective tax strategies that align with your financial goals. We work closely with you to understand your unique situation and develop customized plans that optimize tax benefits and reduce liabilities. Our expert consultants provide valuable insights on tax-efficient investments, deductions, and credits. By staying up-to-date with the latest tax regulations and trends, we ensure that your tax strategy remains robust and compliant. Let us guide you through the complexities of tax planning and consulting to achieve favorable financial outcomes.",
+      "Patel & Gupta offers a range of additional services to enhance client value. Our Recruitment cell specializes in executive search and placement for finance and accounting roles, as well as providing expert advice on HR policies and implementation. We also deliver periodic training to help clients stay updated with changes in accounting and legal regulations, ensuring timely and efficient compliance. Additionally, our Payroll Processing service handles all aspects of employee payments, from salary calculations and disbursements to maintaining records and meeting statutory requirements.",
     icon: "https://consultia-nextjs.vercel.app/assets/img/icons/tax-business2.png",
-    link: "/service/3",
+    link: "/service/other-services",
+    slug: "other-services",
+    taxes: [
+      {
+        id: 1,
+        head: "Recruitment",
+        para: "In continuation of the process of adding value to the professional services to clients, P&G now has its Recruitment cell which has been set up to meet the HR and Personnel requirements of clients. This includes not only an executive search and placement of finance and accounts professionals and executives at every level of the organization through a structured and organized process but also advising clients on meeting their requirements in matters relating to HR policy and its implementation.",
+      },
+      {
+        id: 2,
+        head: "Training",
+        para: "We at Patel & Gupta offer periodical training pertaining to change in accounting and legal laws to our esteemed clients so that they can adhere to the law of land timely and efficiently.",
+      },
+      {
+        id: 3,
+        head: "Payroll Processing",
+        para: "P&G also provides payroll services relating to client’s employee payments. The service covers every aspect of the payroll function from calculating salaries and the payments to concerned employees and consequently maintaining requisite records, to complying with every statutory requirement.",
+      },
+    ],
+    isDetail: false,
   },
 ];
 

@@ -43,9 +43,10 @@ const Hero = () => {
             variants={fadeInOut("down", "tween", 0.2, 0.8)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit mt-2 text-center text-xl lg:text-[60px] text-[#161540] text-balance font-extrabold leading-10 lg:leading-[65px]"
+            className="w-full h-fit mt-2 text-center text-xl md:text-2xl lg:text-5xl text-[#161540] text-balance font-extrabold leading-10 lg:leading-[65px]"
           >
-            We{"’"}re making work meaningful for everyone, everywhere.
+            Since 2000, Patel & Gupta, Chartered Accountants, has been offering
+            expert services in Audit & Assurance, Advisory, and Taxation.
           </motion.p>
         </div>
       </section>
@@ -69,7 +70,7 @@ const Services = () => {
               initial="hidden"
               animate={isInView ? "show" : "exit"}
               key={index}
-              className="flex flex-col p-6 space-y-4 bg-white/20 backdrop-blur-md  rounded-lg shadow-lg md:flex-row md:space-y-0 md:space-x-4 translate-y-1 hover:-translate-y-1 ease-in-out duration-300"
+              className="w-fit h-fit group flex flex-col p-6 space-y-4 bg-white/20 backdrop-blur-md rounded-lg shadow-lg md:flex-row md:space-y-0 md:space-x-4 translate-y-1 hover:-translate-y-2 ease-in-out duration-300"
             >
               <div className="flex-shrink-0">
                 <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
@@ -84,13 +85,16 @@ const Services = () => {
               <div className="flex justify-between flex-col">
                 <div className="flex-grow">
                   <h3 className="text-xl font-semibold">{service.title}</h3>
-                  <p className="mt-2 text-zinc-500  ">{service.description}</p>
+                  <p className="mt-2 text-zinc-500 line-clamp-3">
+                    {service.description}
+                  </p>
                 </div>
                 <Link
                   href={service.link}
-                  className="inline-flex items-center mt-4 text-green-600 hover:underline"
+                  className="w-fit inline-flex items-center mt-4 text-green-600 group-hover:underline underline-offset-8 group-hover:translate-x-1 ease-in-out duration-300"
                 >
-                  Learn More <MdArrowForward className="ml-2" />
+                  Learn More{" "}
+                  <MdArrowForward className="ml-2 group-active:translate-x-2 ease-in-out duration-300" />
                 </Link>
               </div>
             </motion.div>

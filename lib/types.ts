@@ -32,9 +32,20 @@ export interface ServiceValues {
   id: number;
   title: string;
   description: string;
-  detail: string;
   icon: string;
   link: string;
+  slug: string;
+  isDetail: boolean;
+  servicesIinclude?: string;
+  detail?: {
+    id: number;
+    para: string;
+  }[];
+  taxes?: {
+    id: number;
+    head: string;
+    para: string;
+  }[];
 }
 
 export interface CarouselProps {

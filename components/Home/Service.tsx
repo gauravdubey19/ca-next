@@ -45,7 +45,7 @@ const Service = () => {
                 initial="hidden"
                 animate={isInView ? "show" : "exit"}
                 key={index}
-                className="flex flex-col p-6 space-y-4 bg-white/20 backdrop-blur-md text-white rounded-lg shadow-lg md:flex-row md:space-y-0 md:space-x-4 translate-y-1 hover:-translate-y-1 ease-in-out duration-300"
+                className="w-full h-fit group flex flex-col p-6 space-y-4 bg-white/20 backdrop-blur-md text-white rounded-lg shadow-lg md:flex-row md:space-y-0 md:space-x-4 translate-y-1 hover:-translate-y-1 ease-in-out duration-300"
               >
                 <div className="flex-shrink-0">
                   <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
@@ -60,15 +60,16 @@ const Service = () => {
                 <div className="flex justify-between flex-col">
                   <div className="flex-grow">
                     <h3 className="text-xl font-semibold">{service.title}</h3>
-                    <p className="mt-2 text-zinc-200  ">
+                    <p className="mt-2 text-zinc-200  line-clamp-3">
                       {service.description}
                     </p>
                   </div>
                   <Link
                     href={service.link}
-                    className="inline-flex items-center mt-4 text-green-600 hover:underline"
+                    className="w-fit inline-flex items-center mt-4 text-green-600 group-hover:underline underline-offset-8 group-hover:translate-x-1 ease-in-out duration-300"
                   >
-                    Learn More <MdArrowForward className="ml-2" />
+                    Learn More{" "}
+                    <MdArrowForward className="ml-2 group-active:translate-x-2 ease-in-out duration-300" />
                   </Link>
                 </div>
               </motion.div>

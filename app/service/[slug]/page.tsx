@@ -2,9 +2,9 @@ import ServiceDetail from "@/components/Service/ServiceDetail";
 import React from "react";
 
 export default function ServiceDetailPage({
-  params: { id },
+  params: { slug },
 }: {
-  params: { id: number };
+  params: { slug: string };
 }) {
-  return <ServiceDetail id={id} />;
+  return <ServiceDetail slug={slug} />;
 }

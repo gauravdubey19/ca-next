@@ -7,8 +7,15 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
-const ServiceDetail = ({ id }: { id: number }) => {
-  const service: ServiceValues = services[id];
+const ServiceDetail = ({ slug }: { slug: string }) => {
+  console.log(slug);
+
+  const service = services.find((srv: ServiceValues) => srv.slug === slug);
+
+  // If the service is not found, you might want to handle this case gracefully
+  if (!service) {
+    return <div className="text-center mt-10 text-xl">Service not found</div>;
+  }
 
   return (
     <>
@@ -48,15 +55,73 @@ const ServiceDetail = ({ id }: { id: number }) => {
           >
             {service.description}
           </motion.p>
-          <motion.p
-            variants={fadeInOut("down", "tween", 0.2, 1.5)}
-            initial="hidden"
-            whileInView="show"
-            animate="show"
-            className="w-full h-fit text-[#504e97] text-md md:text-lg lg:text-xl mt-5 text-balance text-justify"
-          >
-            {service.detail}
-          </motion.p>
+          {service.servicesIinclude && (
+            <motion.p
+              variants={fadeInOut("down", "tween", 0.2, 1.2)}
+              initial="hidden"
+              whileInView="show"
+              animate="show"
+              className="w-full h-fit text-start text-[#504e97] text-lg md:text-xl lg:text-2xl font-semibold mt-8"
+            >
+              {service.servicesIinclude}
+            </motion.p>
+          )}
+          {/* <div className="relative w-full h-full flex justify-between gap-2 br"> */}
+          <div className="w-full space-y-4 md:space-y-6 mt-8">
+            {service.isDetail &&
+              service.detail &&
+              service.detail.map((detail, index) => (
+                <motion.p
+                  key={index}
+                  variants={fadeInOut("up", "tween", 0.2, detail.id * 0.5)}
+                  initial="hidden"
+                  whileInView="show"
+                  animate="show"
+                  viewport={{ amount: 0.5, once: false }}
+                  className="w-full h-fit text-[#504e97] text-md md:text-lg lg:text-xl text-balance"
+                >
+                  {detail.para}
+                </motion.p>
+              ))}
+          </div>
+          {/* <div className="hidden md:block sticky top-10 w-1/2 h-fit rounded-lg overflow-hidden">
+              <Image
+                src="https://img.freepik.com/premium-vector/auditing-tax-process-accounting-concept_108855-6341.jpg?semt=ais_hybrid"
+                alt="Audit and Assurance Services"
+                width={400}
+                height={400}
+                className="w-full h-auto"
+              />
+            </div>
+          </div> */}
+          {service.taxes &&
+            service.taxes.map((tax, index) => (
+              <div key={index} className="mt-8 space-y-4">
+                <motion.p
+                  variants={fadeInOut("down", "tween", 0.2, tax.id * 0.5)}
+                  initial="hidden"
+                  whileInView="show"
+                  animate="show"
+                  className="w-full h-fit text-start text-[#504e97] text-lg md:text-xl lg:text-2xl font-semibold"
+                >
+                  <span className="underline underline-offset-8">
+                    {tax.head}
+                  </span>{" "}
+                  :
+                </motion.p>
+                <motion.p
+                  key={index}
+                  variants={fadeInOut("up", "tween", 0.2, tax.id * 0.8)}
+                  initial="hidden"
+                  whileInView="show"
+                  animate="show"
+                  viewport={{ amount: 0.5, once: false }}
+                  className="w-full h-fit text-[#504e97] text-md md:text-lg lg:text-xl text-balance"
+                >
+                  {tax.para}
+                </motion.p>
+              </div>
+            ))}
         </div>
       </main>
     </>
