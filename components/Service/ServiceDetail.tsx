@@ -78,7 +78,7 @@ const ServiceDetail = ({ slug }: { slug: string }) => {
                   whileInView="show"
                   animate="show"
                   viewport={{ amount: 0.5, once: false }}
-                  className="w-full h-fit text-[#504e97] text-md md:text-lg lg:text-xl text-balance"
+                  className="w-full h-fit text-[#504e97] text-md md:text-lg lg:text-xl"
                 >
                   {detail.para}
                 </motion.p>

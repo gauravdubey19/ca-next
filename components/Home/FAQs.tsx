@@ -44,14 +44,14 @@ const FAQs: React.FC = () => {
         <Accordion type="single" collapsible className="w-full">
           {faqs.map((item, index) => (
             <motion.div
-              variants={fadeInOut("up", "tween", 0.2, 0.5 * index)}
+              variants={fadeInOut("right", "tween", 0.2, 0.5 * index)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
               key={index}
               className="w-full h-fit space-y-4"
             >
               <AccordionItem value={item.value} key={index}>
-                <AccordionTrigger className="w-full text-lg md:text-xl font-medium">
+                <AccordionTrigger className="w-full text-lg md:text-xl font-medium text-start">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="w-full text-md md:text-lg">

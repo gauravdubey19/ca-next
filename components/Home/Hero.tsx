@@ -46,7 +46,7 @@ export default function Hero() {
     let scrollToPosition = 0;
 
     if (size === "mobile") {
-      scrollToPosition = window.innerHeight - 90;
+      scrollToPosition = window.innerHeight - 220;
     } else if (size === "tablet") {
       scrollToPosition = window.innerHeight;
     } else if (size === "desktop") {
@@ -61,7 +61,7 @@ export default function Hero() {
 
   return (
     <section className="relative w-full h-fit md:h-[120vh]">
-      <div className="h-fit md:h-[calc(120vh-70px)] flex-center gap-2 p-4 lg:px-[120px] lg:py-8 overflow-hidden">
+      <div className="h-fit md:h-[calc(120vh-70px)] flex-center gap-2 p-4 lg:px-[120px] lg:py-8 mb-14 md:mb-0 overflow-hidden">
         <div className="w-full lg:w-[50%] h-fit space-y-5 lg:space-y-8 p-2 z-30">
           <motion.span
             variants={fadeInOut("right", "tween", 0.2, 0.8)} //spring
@@ -107,7 +107,9 @@ export default function Hero() {
           <motion.div
             variants={fadeInOut("right", "tween", 0.2, 0.8)}
             initial="hidden"
-            animate={isInView ? "show" : "exit"}
+            animate="show"
+            exit="exit"
+            viewport={{ amount: 0.6, once: false }}
             className="w-full flex items-center justify-center md:justify-start flex-col gap-4 sm:flex-row"
           >
             <Link href="/contact">
@@ -155,7 +157,7 @@ export default function Hero() {
       </div>
       <div
         ref={ref}
-        className="absolute -bottom-12 z-20 w-full h-[70px] flex-center"
+        className="absolute -bottom-24 md:-bottom-12 z-20 w-full h-[70px] flex-center"
       >
         <motion.div
           variants={fadeInOut("down", "tween", 0.2, 0.8)}

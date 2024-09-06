@@ -14,6 +14,7 @@ const Service = () => {
       <main className="w-full h-full overflow-hidden">
         <Hero />
         <Services />
+        <ProfessionalServices />
       </main>
     </>
   );
@@ -43,7 +44,7 @@ const Hero = () => {
             variants={fadeInOut("down", "tween", 0.2, 0.8)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit mt-2 text-center text-xl md:text-2xl lg:text-5xl text-[#161540] text-balance font-extrabold leading-10 lg:leading-[65px]"
+            className="w-full h-fit mt-2 text-center text-xl md:text-2xl lg:text-5xl text-[#161540] text-balance font-extrabold leading-8 md:leading-10 lg:leading-[65px]"
           >
             Since 2000, Patel & Gupta, Chartered Accountants, has been offering
             expert services in Audit & Assurance, Advisory, and Taxation.
@@ -104,3 +105,79 @@ const Services = () => {
     </>
   );
 };
+const ProfessionalServices = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.3 });
+  return (
+    <>
+      <section
+        ref={ref}
+        className="relative w-full h-fit flex flex-col gap-4 md:gap-5 items-center p-2 my-4 md:px-[120px] md:py-8 overflow-hidden"
+      >
+        <div className="w-full h-fit">
+          <motion.p
+            variants={fadeInOut("down", "tween", 0.2, 0.5)}
+            initial="hidden"
+            animate={isInView ? "show" : "exit"}
+            className="w-full h-fit text-[#7977C6] text-xl md:text-2xl lg:text-3xl text-center uppercase"
+          >
+            AREA OF PROFESSIONAL SERVICES:
+          </motion.p>
+
+          <motion.p
+            variants={fadeInOut("down", "tween", 0.2, 1.2)}
+            initial="hidden"
+            whileInView="show"
+            animate="show"
+            className="w-full h-fit text-start text-[#504e97] text-lg md:text-xl lg:text-2xl font-semibold mt-8"
+          >
+            <span className="underline underline-offset-8">
+              Firm is practicing in the area of
+            </span>{" "}
+            :
+          </motion.p>
+          <div className="w-full space-y-4 md:space-y-6 mt-8">
+            {practice &&
+              practice.map((p, index) => (
+                <motion.p
+                  key={index}
+                  variants={fadeInOut("up", "tween", 0.2, p.id * 0.5)}
+                  initial="hidden"
+                  whileInView="show"
+                  animate="show"
+                  viewport={{ amount: 0.5, once: false }}
+                  className="w-full h-fit text-[#504e97] text-md md:text-lg lg:text-xl"
+                >
+                  {p.para}
+                </motion.p>
+              ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+const practice = [
+  { id: 1, para: "1. Statutory Audit, Internal Audit & Concurrent Audit." },
+  {
+    id: 2,
+    para: "Clients include SBI, PNB, BOI, IDBI, Canara Bank, Allahabad Bank, Limited and Private Limited Companies, Trusts, Cooperative Societies, Educational Institutes.",
+  },
+  { id: 3, para: "2. Account out sourcing and online accounting." },
+  { id: 4, para: "3. Direct and indirect Taxation." },
+  { id: 5, para: "4. Internal Valuation of Share." },
+  { id: 6, para: "5. Company Law Matters." },
+  { id: 7, para: "6. Sourcing of capital through debt and PE deals." },
+  { id: 8, para: "7. Investment Consultancy." },
+  { id: 9, para: "8. Management Consultancy." },
+  { id: 10, para: "9. Financing from FI’s and Banks." },
+  {
+    id: 11,
+    para: "Firm is also engaged in providing financial assistance from the bank’s and FI’s by the way of Term Loan, Short term and long term working capital Loan, Mortgage loan, unsecured Loans, Heavy Equipment/Machinery Loans, Export Credit, LC, Bank guarantee facility etc looking to the need & requirement best suited to the clients.",
+  },
+  {
+    id: 12,
+    para: "Our firm has also been engaged previously for field audit and documentation on behalf of Standard Chartered Bank for their Supply Chain Finance product under Dealer Financing Flexi loan in M.P., Gujrat, Rajasthan, and in exceptional cases Haryana and Punjab.",
+  },
+];
