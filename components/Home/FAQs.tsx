@@ -69,7 +69,7 @@ const FAQs: React.FC = () => {
         className="h-fit w-full text-lg md:text-xl font-bold mt-6 md:mt-12 overflow-hidden"
       >
         Got more Questions ? Speak to our experts{" "}
-        <Link href="/contact" className="hover-underline-lr">
+        <Link href="/contact" className="hover-underline-lr text-[#504e97]">
           Contact Us
         </Link>
       </motion.p>

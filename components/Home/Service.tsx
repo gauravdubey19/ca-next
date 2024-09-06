@@ -66,7 +66,7 @@ const Service = () => {
                   </div>
                   <Link
                     href={service.link}
-                    className="w-fit inline-flex items-center mt-4 text-green-600 group-hover:underline underline-offset-8 group-hover:translate-x-1 ease-in-out duration-300"
+                    className="group w-fit inline-flex items-center mt-4 text-green-600 group-hover:underline underline-offset-8 group-hover:translate-x-1 ease-in-out duration-300"
                   >
                     Learn More{" "}
                     <MdArrowForward className="ml-2 group-active:translate-x-2 ease-in-out duration-300" />

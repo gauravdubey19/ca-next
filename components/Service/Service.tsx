@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { fadeInOut } from "@/lib/utils";
-import { MdArrowForward } from "react-icons/md";
 import { services } from "@/lib/data";
+import { MdArrowForward } from "react-icons/md";
 
 const Service = () => {
   return (
@@ -92,7 +92,7 @@ const Services = () => {
                 </div>
                 <Link
                   href={service.link}
-                  className="w-fit inline-flex items-center mt-4 text-green-600 group-hover:underline underline-offset-8 group-hover:translate-x-1 ease-in-out duration-300"
+                  className="group w-fit inline-flex items-center mt-4 text-green-600 group-hover:underline underline-offset-8 group-hover:translate-x-1 ease-in-out duration-300"
                 >
                   Learn More{" "}
                   <MdArrowForward className="ml-2 group-active:translate-x-2 ease-in-out duration-300" />
@@ -105,6 +105,7 @@ const Services = () => {
     </>
   );
 };
+
 const ProfessionalServices = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
