@@ -50,6 +50,7 @@ export interface ServiceValues {
 
 export interface CarouselProps {
   children: React.ReactNode;
+  dots?: boolean;
   infinite?: boolean;
   autoplay?: boolean;
   autoplaySpeed?: number;

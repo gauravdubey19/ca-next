@@ -15,9 +15,10 @@ const Carousel: React.FC<CarouselProps> = ({
   pauseOnHover = true,
   slidesToShow = 1,
   arrows = false,
+  dots = false,
 }) => {
   const settings = {
-    dots: false,
+    dots: dots,
     draggable: true,
     swipe: true,
     swipeToSlide: true,
@@ -67,7 +68,8 @@ const Carousel: React.FC<CarouselProps> = ({
     <>
       <Slider
         {...settings}
-        className={`cursor-grab active:cursor-grabbing  ${arrows && "md:py-2"}`}
+        // cursor-grab active:cursor-grabbing
+        className={`${arrows && "md:py-2"}`}
       >
         {children}
       </Slider>
@@ -82,9 +84,12 @@ const PrevArrow = (props: any) => {
   return (
     <div
       onClick={onClick}
-      className="absolute -top-2.5 left-3 p-1 cursor-pointer hover:scale-105 active:-translate-x-1 ease-in-out duration-200"
+      className="group absolute -bottom-10 left-0 z-50 p-2 rounded-full shadow-md backdrop-blur-md border cursor-pointer hover:shadow-lg ease-in-out duration-200"
     >
-      <IoArrowBackSharp size={20} />
+      <IoArrowBackSharp
+        size={25}
+        className="group-hover:scale-110 group-active:-translate-x-1 ease-in-out duration-200"
+      />
     </div>
   );
 };
@@ -93,9 +98,12 @@ const NextArrow = (props: any) => {
   return (
     <div
       onClick={onClick}
-      className="absolute -top-2.5 left-10 p-1 cursor-pointer hover:scale-105 active:translate-x-1 ease-in-out duration-200"
+      className="group absolute -bottom-10 right-0 z-50 p-2 rounded-full shadow-md backdrop-blur-md border cursor-pointer hover:shadow-lg ease-in-out duration-200"
     >
-      <IoArrowForwardSharp size={20} />
+      <IoArrowForwardSharp
+        size={25}
+        className="group-hover:scale-110 group-active:-translate-x-1 ease-in-out duration-200"
+      />
     </div>
   );
 };

@@ -42,7 +42,7 @@ const Hero = () => {
           </motion.p>
         </div>
         <ContactForm />
-        <Carousel autoplay={true}>
+        <Carousel autoplay={true} arrows={true} dots={true}>
           {maps.map((map, index) => (
             <motion.div
               key={index}
