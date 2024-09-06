@@ -1,4 +1,12 @@
+import {
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from "lucide-react";
 import { LinkValues, ServiceValues } from "./types";
+import { FiPhoneOutgoing } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
 
 export const links: LinkValues[] = [
   { id: 0, head: "Home", href: "/" },
@@ -236,3 +244,68 @@ export const faqs = [
       "Before meeting your Chartered Accountant, gather all relevant financial documents, including income statements, balance sheets, tax returns, and any other records that reflect your business’s financial activities.",
   },
 ];
+
+export const footerData = {
+  companyDescription:
+    "Offering tailored financial solutions, including term loans, working capital loans, mortgage and unsecured loans, heavy equipment financing, export credit, LC, and bank guarantee facilities to meet your unique needs.",
+  socialLinks: [
+    {
+      href: "https://www.linkedin.com/company/patel-&-gupta-chartered-accountants/about/",
+      lable: "LinkedIn",
+      icon: LinkedinIcon,
+    },
+    {
+      href: "#",
+      lable: "Facebook",
+      icon: FacebookIcon,
+    },
+    {
+      href: "#",
+      lable: "Instagram",
+      icon: InstagramIcon,
+    },
+    { href: "#", lable: "Twitter", icon: TwitterIcon },
+  ],
+  columns: [
+    {
+      title: "Our Company",
+      links: [
+        { label: "Service", href: "/service" },
+        { label: "About us", href: "/about-us" },
+        { label: "Contact us", href: "/contact" },
+      ],
+    },
+    {
+      title: "Learn",
+      links: [{ label: "Our Blog", href: "/blog" }],
+    },
+    {
+      title: "Resources",
+      links: [{ label: "FAQs", href: "/#faqs" }],
+    },
+  ],
+  contactInfo: [
+    {
+      type: "phone",
+      label: "India",
+      value: "+91 7647867870",
+      href: "tel:+91 7647867870",
+      icon: FiPhoneOutgoing,
+    },
+    {
+      type: "phone",
+      label: "India",
+      value: "+91 7312405500",
+      href: "tel:+91 7312405500",
+      icon: FiPhoneOutgoing,
+    },
+    {
+      type: "email",
+      label: "General Info",
+      value: "audit@patelngupta.com",
+      href: "mailto:audit@patelngupta.com",
+      icon: MdOutlineEmail,
+    },
+  ],
+  copyright: "All Rights Reserved by Patel & Gupta CA's.",
+};

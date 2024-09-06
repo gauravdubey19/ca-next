@@ -8,19 +8,11 @@
 //           variants={fadeInOut("down", "tween", 0.2, 0.5)}
 //           initial="hidden"
 //           animate={isInView ? "show" : "exit"}
-import { motion, useInView } from "framer-motion";
-
-import {
-  FacebookIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  TwitterIcon,
-} from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 import { useRef } from "react";
-import { FiPhoneOutgoing } from "react-icons/fi";
-import { MdOutlineEmail } from "react-icons/md";
+import Link from "next/link";
+import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { footerData } from "@/lib/data";
 
 export default function Footer() {
   const ref = useRef(null);
@@ -69,7 +61,9 @@ export default function Footer() {
               key={index}
               className="w-fit h-fit flex items-center gap-2 hover:translate-x-1.5 ease-in-out duration-300"
             >
-              {info.icon}
+              {/* {info.icon} */}
+              <info.icon size={20} className="text-muted-foreground" />
+
               <span className="hover-underline-lr text-muted-foreground text-sm md:text-md lg:text-lg">
                 {info.value}
               </span>
@@ -78,7 +72,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container max-w-7xl flex-between flex-col-reverse md:flex-row gap-4 border-t border-t-slate-300 py-4 md:py-8">
-        <p className="text-muted-foreground text-sm">
+        <p className="text-muted-foreground text-sm hover:text-foreground ease-in-out duration-300">
           © {new Date().getFullYear()} {footerData.copyright}
         </p>
         <div className="flex items-center gap-4 md:mr-10">
@@ -91,7 +85,7 @@ export default function Footer() {
               className="text-muted-foreground hover:text-foreground"
               prefetch={false}
             >
-              {link.icon}
+              <link.icon className="h-5 w-5" />
             </Link>
           ))}
         </div>
@@ -99,68 +93,3 @@ export default function Footer() {
     </div>
   );
 }
-
-const footerData = {
-  companyDescription:
-    "Offering tailored financial solutions, including term loans, working capital loans, mortgage and unsecured loans, heavy equipment financing, export credit, LC, and bank guarantee facilities to meet your unique needs.",
-  socialLinks: [
-    {
-      href: "https://www.linkedin.com/company/patel-&-gupta-chartered-accountants/about/",
-      lable: "LinkedIn",
-      icon: <LinkedinIcon className="h-5 w-5" />,
-    },
-    {
-      href: "#",
-      lable: "Facebook",
-      icon: <FacebookIcon className="h-5 w-5" />,
-    },
-    {
-      href: "#",
-      lable: "Instagram",
-      icon: <InstagramIcon className="h-5 w-5" />,
-    },
-    { href: "#", lable: "Twitter", icon: <TwitterIcon className="h-5 w-5" /> },
-  ],
-  columns: [
-    {
-      title: "Our Company",
-      links: [
-        { label: "Service", href: "/service" },
-        { label: "About us", href: "/about-us" },
-        { label: "Contact us", href: "/contact" },
-      ],
-    },
-    {
-      title: "Learn",
-      links: [{ label: "Our Blog", href: "/blog" }],
-    },
-    {
-      title: "Resources",
-      links: [{ label: "FAQs", href: "/#faqs" }],
-    },
-  ],
-  contactInfo: [
-    {
-      type: "phone",
-      label: "India",
-      value: "+91 7647867870",
-      href: "tel:+91 7647867870",
-      icon: <FiPhoneOutgoing size={20} className="text-muted-foreground" />,
-    },
-    {
-      type: "phone",
-      label: "India",
-      value: "+91 7312405500",
-      href: "tel:+91 7312405500",
-      icon: <FiPhoneOutgoing size={20} className="text-muted-foreground" />,
-    },
-    {
-      type: "email",
-      label: "General Info",
-      value: "audit@patelngupta.com",
-      href: "mailto:audit@patelngupta.com",
-      icon: <MdOutlineEmail size={20} className="text-muted-foreground" />,
-    },
-  ],
-  copyright: "All Rights Reserved by Patel & Gupta CA's.",
-};
