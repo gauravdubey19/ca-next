@@ -181,7 +181,7 @@ const Business = () => {
       >
         <Image
           src={
-            "/assets/images/image1.png"
+            "/assets/images/image1.jpeg"
           }
           alt="banner"
           width={400}
