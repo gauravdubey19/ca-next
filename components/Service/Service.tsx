@@ -15,6 +15,7 @@ const Service = () => {
         <Hero />
         <Services />
         <ProfessionalServices />
+        <EmployeesPersonnel />
       </main>
     </>
   );
@@ -181,4 +182,54 @@ const practice = [
     id: 12,
     para: "Our firm has also been engaged previously for field audit and documentation on behalf of Standard Chartered Bank for their Supply Chain Finance product under Dealer Financing Flexi loan in M.P., Gujrat, Rajasthan, and in exceptional cases Haryana and Punjab.",
   },
+];
+
+const EmployeesPersonnel = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.3 });
+  return (
+    <>
+      <section
+        ref={ref}
+        className="relative w-full h-fit flex flex-col gap-4 md:gap-5 items-center p-2 my-4 md:px-[120px] md:py-8 overflow-hidden"
+      >
+        <div className="w-full h-fit">
+          <motion.p
+            variants={fadeInOut("down", "tween", 0.2, 1.2)}
+            initial="hidden"
+            whileInView="show"
+            animate="show"
+            className="w-full h-fit text-start text-[#504e97] text-lg md:text-xl lg:text-2xl font-semibold mt-8"
+          >
+            Presently firm employees following personnel altogether including
+            Head Office and others Branches
+          </motion.p>
+          <div className="w-full mt-4 md:mt-8">
+            {employeesPersonnel.map((ep, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInOut("up", "tween", 0.2, ep.id * 0.5)}
+                initial="hidden"
+                whileInView="show"
+                animate="show"
+                viewport={{ amount: 0.5, once: false }}
+                className="w-full h-fit grid grid-cols-2 p-4"
+              >
+                <span>{ep.head}</span>
+                <span>{ep.value}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+const employeesPersonnel = [
+  { id: 1, head: "1. Articles", value: 15 },
+  { id: 2, head: "2. Tax Assistance", value: 4 },
+  { id: 3, head: "3. Adm. Staff", value: 3 },
+  { id: 4, head: "4. Chartered Accountants", value: 3 },
+  { id: 5, head: "5. Others Back Office staff", value: 3 },
 ];

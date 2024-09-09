@@ -23,14 +23,12 @@ const About = () => {
             className="hidden md:flex relative w-[35%] h-full rounded-xl overflow-hidden"
           >
             <Image
-              src={
-                "https://consultia-nextjs.vercel.app/assets/img/about/about21.png"
-              }
-              width={550}
-              height={550}
+              src="/assets/images/image3.png"
+              width={800}
+              height={800}
               alt={"img"}
               loading="lazy"
-              className="w-full h-full object-cover"
+              className="w-full h-[100vh] object-cover"
             />
           </motion.div>
           <div className="w-full h-full md:w-[45%] space-y-4 p-2 md:px-8 md:py-6">

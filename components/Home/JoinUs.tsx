@@ -46,7 +46,7 @@ export default function JoinUs() {
   return (
     <section
       ref={ref}
-      className="w-full h-[50vh] lg:h-[70vh] flex-center bg-[url(https://www.jagranimages.com/images/newimg/09022023/09_02_2023-office_meeting_tips_f_23323658.jpg)] bg-cover bg-center bg-no-repeat"
+      className="w-full h-[50vh] lg:h-[70vh] flex-center bg-[url(/assets/images/image4.jpeg)] bg-cover bg-center bg-no-repeat"
     >
       <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 items-center gap-8 bg-black/60 p-4 md:px-10 lg:px-32 ">
         <div className="space-y-4">
@@ -78,7 +78,7 @@ export default function JoinUs() {
         >
           <form
             onSubmit={handleBtn}
-            className="flex flex-wrap w-full items-center bg-white space-x-2 rounded-lg p-2 overflow-hidden"
+            className="flex flex-wrap w-full items-center bg-white space-x-2 rounded-lg p-1 overflow-hidden"
           >
             <div className="flex flex-wrap w-full items-center bg-white space-x-2 rounded-lg p-2 overflow-hidden">
               <input

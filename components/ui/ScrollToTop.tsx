@@ -59,7 +59,7 @@ export default function ScrollToTop() {
             title={
               pathname === "/blog/post" ? "Add new post" : "Add new What We Do"
             }
-            className={`animate-slide-up fixed ${isVisible ? "bottom-16" : "bottom-4"} right-4 w-10 h-10 cursor-pointer flex-center bg-[#7a77c641] backdrop-blur-md rounded-full hover:scale-110 transition-transform duration-300`}
+            className={`animate-slide-up fixed ${isVisible ? "bottom-16" : "bottom-4"} right-4 w-10 h-10 cursor-pointer flex-center bg-[#7a77c641] backdrop-blur-md rounded-full hover:scale-110 transition-transform ease-in-out duration-300`}
           >
             <MdPostAdd size={25} className="cursor-pointer" />
           </Link>

@@ -30,7 +30,7 @@ export default AboutUs;
 
 const Hero = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3 });
+  const isInView = useInView(ref, { amount: 0.1 });
   return (
     <>
       <section
@@ -64,11 +64,11 @@ const Hero = () => {
         >
           <Image
             src={
-              "https://consultia-nextjs.vercel.app/assets/img/about/about-6.jpg"
+              "/assets/images/image2.png"
             }
             alt="banner"
-            width={400}
-            height={600}
+            width={1000}
+            height={1000}
             className="w-full h-full object-cover"
           />
         </motion.div>
@@ -79,7 +79,7 @@ const Hero = () => {
 
 const Story = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3 });
+  const isInView = useInView(ref, { amount: 0.2 });
   return (
     <>
       <section
@@ -181,7 +181,7 @@ const Business = () => {
       >
         <Image
           src={
-            "https://consultia-nextjs.vercel.app/assets/img/about/about22.png"
+            "/assets/images/image1.png"
           }
           alt="banner"
           width={400}
@@ -198,7 +198,6 @@ const Business = () => {
         >
           <PiHandshakeLight size={20} className="mr-1" />
           We doing exceptional business since 2000.
-          {/* We{"'"}ve been providing exceptional business services since 2000. */}
         </motion.p>
         <div className="space-y-4 md:space-y-6">
           <motion.p

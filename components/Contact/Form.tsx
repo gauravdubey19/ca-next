@@ -26,10 +26,10 @@ const ContactForm = () => {
           className="w-full h-fit flex-center overflow-hidden"
         >
           <Image
-            src="/assets/contactUs.webp"
+            src="/assets/images/contactUs.png"
             alt="Contact Us"
-            width={200}
-            height={200}
+            width={400}
+            height={400}
             className="w-fit h-full object-contain"
           />
         </motion.div>
@@ -334,7 +334,7 @@ const Form: React.FC = () => {
 
       <Button
         type="submit"
-        className={`w-full bg-blue-600 font-bold text-white rounded py-2 ${
+        className={`w-full bg-[#7977C6] font-bold text-white rounded py-2 ${
           isSubmitting || Object.values(errors).some(Boolean)
             ? "opacity-50 cursor-not-allowed"
             : "active:translate-y-0.5 ease-in-out duration-300"

@@ -1,14 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
-import Carousel from "../ui/Carousel";
 import { motion, useInView } from "framer-motion";
+import { fadeInOut, zoom } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { MdArrowDownward } from "react-icons/md";
 import { FaArrowUp } from "react-icons/fa";
-import { fadeInOut, zoom } from "@/lib/utils";
-import Link from "next/link";
 
 export default function Hero() {
   const ref = useRef(null);
@@ -137,13 +136,13 @@ export default function Hero() {
         >
           <Image
             src={hero.imageUrl}
-            width={550}
-            height={550}
+            width={800}
+            height={800}
             alt={hero.imageAlt}
             loading="lazy"
             className="w-full h-full object-cover"
           />
-          <div className="absolute top-0 right-2 w-fit h-fit">
+          {/* <div className="absolute top-0 right-2 w-fit h-fit">
             <Image
               src="https://consultia-nextjs.vercel.app/assets/img/shapes/tax-shape1.png"
               width={200}
@@ -152,7 +151,7 @@ export default function Hero() {
               loading="lazy"
               className="w-28 h-24"
             />
-          </div>
+          </div> */}
         </motion.div>
       </div>
       <div
@@ -178,6 +177,6 @@ export default function Hero() {
 }
 
 const hero = {
-  imageUrl: "https://consultia-nextjs.vercel.app/assets/img/bg/main2.jpg",
+  imageUrl: "/assets/images/image1.jpeg",
   imageAlt: "Professionals in a discussion",
 };

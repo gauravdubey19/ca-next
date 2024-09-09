@@ -102,7 +102,7 @@ const NextArrow = (props: any) => {
     >
       <IoArrowForwardSharp
         size={25}
-        className="group-hover:scale-110 group-active:-translate-x-1 ease-in-out duration-200"
+        className="group-hover:scale-110 group-active:translate-x-1 ease-in-out duration-200"
       />
     </div>
   );
