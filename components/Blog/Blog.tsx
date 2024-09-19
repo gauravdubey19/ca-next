@@ -83,10 +83,10 @@ const Posts = ({
         <div className="w-full grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {posts.map((post, index) => (
             <motion.div
+              key={post._id}
               variants={fadeInOut("up", "tween", 0.2, 0.5 * index)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
-              key={post._id}
               className="group border rounded-2xl overflow-hidden shadow-lg"
             >
               <div className="w-full h-48 overflow-hidden rounded-t-lg">
@@ -95,6 +95,7 @@ const Posts = ({
                   alt={post.title}
                   width={350}
                   height={150}
+                  priority
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3"
                 />
               </div>

@@ -47,6 +47,7 @@ const Navbar: React.FC<{ appName?: string }> = ({ appName = "LOGO" }) => {
           alt="logo"
           width={200}
           height={200}
+          priority
           className="w-fit h-fit"
         />
       </Link>
