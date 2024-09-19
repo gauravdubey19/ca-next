@@ -177,6 +177,6 @@ export default function Hero() {
 }
 
 const hero = {
-  imageUrl: "/assets/images/image1.jpeg",
+  imageUrl: "/assets/images/hero.jpeg",
   imageAlt: "Professionals in a discussion",
 };

@@ -23,7 +23,7 @@ const About = () => {
             className="hidden md:flex relative w-[35%] h-full rounded-xl overflow-hidden"
           >
             <Image
-              src="/assets/images/image3.png"
+              src="/assets/images/about.jpeg"
               width={800}
               height={800}
               alt={"img"}

@@ -63,9 +63,7 @@ const Hero = () => {
           className="h-full lg:h-[648px] w-full rounded-3xl overflow-hidden"
         >
           <Image
-            src={
-              "/assets/images/image2.png"
-            }
+            src={"/assets/images/aboutUsPage.jpeg"}
             alt="banner"
             width={1000}
             height={1000}
@@ -180,9 +178,7 @@ const Business = () => {
         className="w-full h-full flex-1 rounded-xl overflow-hidden"
       >
         <Image
-          src={
-            "/assets/images/image1.jpeg"
-          }
+          src={"/assets/images/image1.jpeg"}
           alt="banner"
           width={400}
           height={600}
@@ -380,7 +376,7 @@ const ourTeam: CardData[] = [
     name: "C.A. SATISH PATEL",
     description:
       "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
-    img: "/assets/ca_satish_patel.jpg",
+    img: "/assets/team/ca_satish_patel.jpg",
     social: [
       {
         id: 1,
@@ -395,7 +391,7 @@ const ourTeam: CardData[] = [
     name: "C.A. SHRINATH GUPTA",
     description:
       "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
-    img: "/assets/ca_shrinarth_gupta.jpg",
+    img: "/assets/team/ca_shrinarth_gupta.jpg",
     social: [
       {
         id: 1,
@@ -410,7 +406,7 @@ const ourTeam: CardData[] = [
     name: "C.A. GUNJAN JAIN",
     description:
       "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
-    img: "/assets/ca_gunjan_jain.jpg",
+    img: "/assets/team/ca_gunjan_jain.jpg",
     social: [
       {
         id: 1,
@@ -437,7 +433,7 @@ const ourTeam: CardData[] = [
     name: "C.A. AYUSH GARG",
     description:
       "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
-    img: "/assets/ca_ayush_garg.jpeg",
+    img: "/assets/team/ca_ayush_garg.jpeg",
     social: [
       {
         id: 1,
@@ -452,7 +448,7 @@ const ourTeam: CardData[] = [
     name: "C.A. GOVINDA SWAMI",
     description:
       "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
-    img: "/assets/ca_govinda_swami.jpeg",
+    img: "/assets/team/ca_govinda_swami.jpeg",
     social: [
       {
         id: 1,
