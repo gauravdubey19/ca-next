@@ -175,10 +175,11 @@ const Business = () => {
         variants={fadeInOut("right", "tween", 0.2, 0.5)}
         initial="hidden"
         animate={isInView ? "show" : "exit"}
-        className="w-full h-full flex-1 rounded-xl overflow-hidden"
+        className="w-full h-full md:mt-8 flex-1 rounded-xl overflow-hidden"
       >
+        {/* sticky top-32 */}
         <Image
-          src={"/assets/images/image1.jpeg"}
+          src={"/assets/images/hero.jpeg"}
           alt="banner"
           width={400}
           height={600}
