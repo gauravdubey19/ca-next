@@ -16,6 +16,7 @@ const Carousel: React.FC<CarouselProps> = ({
   slidesToShow = 1,
   arrows = false,
   dots = false,
+  className,
 }) => {
   const settings = {
     dots: dots,
@@ -69,7 +70,7 @@ const Carousel: React.FC<CarouselProps> = ({
       <Slider
         {...settings}
         // cursor-grab active:cursor-grabbing
-        className={`${arrows && "md:py-2"}`}
+        className={`${className} ${arrows && "py-2"}`}
       >
         {children}
       </Slider>

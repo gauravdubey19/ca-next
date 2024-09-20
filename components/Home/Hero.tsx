@@ -59,8 +59,8 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full h-fit md:h-[120vh]">
-      <div className="h-fit md:h-[calc(120vh-70px)] flex-center gap-2 p-4 lg:px-[120px] lg:py-8 mb-14 md:mb-0 overflow-hidden">
+    <section className="relative w-full h-fit md:min-lg:h-fit lg:h-[120vh]">
+      <div className="h-fit lg:h-[calc(120vh-70px)] flex-center gap-2 p-4 lg:px-[120px] lg:py-8 mb-14 lg:mb-0 overflow-hidden">
         <div className="w-full lg:w-[50%] h-fit space-y-5 lg:space-y-8 p-2 z-30">
           <motion.span
             variants={fadeInOut("right", "tween", 0.2, 0.8)} //spring
@@ -77,7 +77,7 @@ export default function Hero() {
               initial="hidden"
               whileInView="show"
               animate="show"
-              className="text-4xl font-extrabold tracking-tight text-gray-950 sm:text-5xl md:text-6xl lg:text-7xl"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-gray-950"
             >
               We are a combination of
             </motion.h2>
@@ -109,7 +109,7 @@ export default function Hero() {
             animate="show"
             exit="exit"
             viewport={{ amount: 0.6, once: false }}
-            className="w-full flex items-center justify-center md:justify-start flex-col gap-4 sm:flex-row"
+            className="w-full flex lg:flex-wrap items-center justify-center md:justify-start flex-col gap-4 sm:flex-row"
           >
             <Link href="/contact">
               <Button className="bg-green-950 hover:bg-green-800 text-lg font-bold px-6 py-4 md:p-7">
@@ -156,7 +156,7 @@ export default function Hero() {
       </div>
       <div
         ref={ref}
-        className="absolute -bottom-24 md:-bottom-12 z-20 w-full h-[70px] flex-center"
+        className="absolute -bottom-24 lg:-bottom-12 z-20 w-full h-[70px] flex-center"
       >
         <motion.div
           variants={fadeInOut("down", "tween", 0.2, 0.8)}

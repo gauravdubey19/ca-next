@@ -42,7 +42,12 @@ const Hero = () => {
           </motion.p>
         </div>
         <ContactForm />
-        <Carousel autoplay={true} arrows={true} dots={true}>
+        <Carousel
+          autoplay={true}
+          arrows={true}
+          dots={true}
+          className="mb-12 md:mb-8 lg:mb-4"
+        >
           {maps.map((map, index) => (
             <motion.div
               key={index}
@@ -54,7 +59,7 @@ const Hero = () => {
             >
               <iframe
                 src={map.mapSrc}
-                loading="lazy"
+                loading="eager"
                 className="w-full h-full border-none object-cover rounded-2xl"
               ></iframe>
             </motion.div>

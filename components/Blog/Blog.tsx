@@ -52,7 +52,7 @@ const Hero = ({ page }: { page: string }) => {
             variants={fadeInOut("down", "tween", 0.2, 0.8)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit mt-2 text-center text-xl lg:text-[60px] text-[#161540] text-balance font-extrabold leading-10 lg:leading-[65px]"
+            className="w-full h-fit mt-2 text-center text-xl lg:text-[60px] text-[#161540] text-balance font-extrabold leading-5 md:leading-8 lg:leading-[65px]"
           >
             {page === "post"
               ? "We’re making work meaningful for everyone, everywhere."

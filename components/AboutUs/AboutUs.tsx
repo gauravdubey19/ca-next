@@ -67,6 +67,7 @@ const Hero = () => {
             alt="banner"
             width={1000}
             height={1000}
+            loading="eager"
             className="w-full h-full object-cover"
           />
         </motion.div>

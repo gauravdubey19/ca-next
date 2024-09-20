@@ -20,7 +20,7 @@ const Service = () => {
         ref={ref}
         className="relative w-full h-fit bg-[#243D31] z-0 overflow-hidden"
       >
-        <div className="w-full h-full flex flex-col gap-4 md:gap-5 items-center p-2 my-4 md:px-[120px] py-[90px] overflow-hidden">
+        <div className="w-full h-full flex flex-col gap-4 md:gap-5 items-center p-2 my-4 py-[90px] overflow-hidden">
           <motion.p
             variants={fadeInOut("down", "tween", 0.2, 0.5)}
             initial="hidden"
@@ -34,11 +34,11 @@ const Service = () => {
             variants={fadeInOut("down", "tween", 0.2, 0.8)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full md:w-[35%] text-center text-4xl font-extrabold text-white"
+            className="w-full lg:w-[35%] text-center text-4xl font-extrabold text-white"
           >
             Our Service is designed specifically for your businesses.
           </motion.div>
-          <div className="container grid grid-cols-1 gap-8 px-6 md:px-8 lg:grid-cols-2 mt-8">
+          <div className="container grid grid-cols-1 gap-8 px-6 lg:grid-cols-2 mt-8 md:px-[100px] lg:px-[120px]">
             {services.map((service, index) => (
               <motion.div
                 variants={fadeInOut("up", "tween", 0.2, 0.2 * index)}

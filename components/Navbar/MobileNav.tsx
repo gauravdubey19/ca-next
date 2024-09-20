@@ -74,7 +74,9 @@ const MobileNav = () => {
           closeIcon={false}
         >
           <SheetTitle className="w-full h-fit flex flex-col items-end text-white">
-            <SheetClose className="text-4xl font-thin mr-2">X</SheetClose>
+            <SheetClose className="text-4xl font-thin mr-2 outline-none border-none">
+              X
+            </SheetClose>
           </SheetTitle>
 
           <div className="h-fit flex flex-col gap-6 pt-5 overflow-hidden">
@@ -105,8 +107,8 @@ const MobileNav = () => {
                       collapsible
                       className="w-full -mt-3"
                     >
-                      <AccordionItem value="item-1">
-                        <AccordionTrigger className="w-full text-2xl">
+                      <AccordionItem value="item-1" className="outline-none">
+                        <AccordionTrigger className="w-full text-2xl outline-none">
                           {link.head}
                         </AccordionTrigger>
                         <AccordionContent className="w-full flex flex-col text-xl">
