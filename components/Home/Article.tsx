@@ -11,7 +11,7 @@ import { SanityDocument } from "next-sanity";
 
 const Article = ({ posts = [] }: { posts: SanityDocument[] }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { amount: 0.3 });
+  const isInView = useInView(ref, { amount: 0.2 });
 
   return (
     <section
