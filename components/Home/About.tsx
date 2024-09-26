@@ -24,10 +24,11 @@ const About = () => {
           >
             <Image
               src="/assets/images/about.jpeg"
-              width={800}
-              height={800}
               alt={"img"}
-              loading="lazy"
+              width={1920}
+              height={1080}
+              objectFit="cover"
+              loading="eager"
               className="w-full h-[100vh] object-cover"
             />
           </motion.div>
@@ -56,11 +57,14 @@ const About = () => {
                 animate={isInView ? "show" : "exit"}
                 className="max-w-[600px] text-lg text-gray-700 md:text-xl lg:text-lg xl:text-xl font-light"
               >
-                The firm {'"PATEL & GUPTA, Chartered Accountants"'} was
-                incorporated in the year 2000 as a partnership firm with four
-                partners, with a vision to provide quality professional services
-                with greater accuracy and transparency through multi-location
-                branches spread across states.
+                The firm{" "}
+                <b className="font-semibold">
+                  {'"PATEL & GUPTA, Chartered Accountants"'}
+                </b>{" "}
+                was incorporated in the year 2000 as a partnership firm with
+                four partners, with a vision to provide quality professional
+                services with greater accuracy and transparency through
+                multi-location branches spread across states.
               </motion.p>
               <motion.p
                 variants={fadeInOut("left", "tween", 0.2, 1.3)}

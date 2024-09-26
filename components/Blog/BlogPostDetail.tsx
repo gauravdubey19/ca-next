@@ -38,8 +38,9 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
             <Image
               src={imageURL}
               alt={title}
-              width={400}
-              height={600}
+              width={1920}
+              height={1080}
+              loading="eager"
               objectFit="cover"
               className="w-full h-full object-cover"
             />
@@ -75,8 +76,9 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
                     <Image
                       src={authorImage}
                       alt={authorName}
-                      width={64}
-                      height={64}
+                      width={1920}
+                      height={1080}
+                      loading="eager"
                       className="w-full h-full object-contain"
                     />
                   </div>

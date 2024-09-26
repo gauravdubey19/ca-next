@@ -26,8 +26,11 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="logo"
-              width={200}
-              height={200}
+              // width={200}
+              // height={200}
+              width={1920}
+              height={1080}
+              loading="eager"
               className="w-fit h-fit"
             />
           </Link>

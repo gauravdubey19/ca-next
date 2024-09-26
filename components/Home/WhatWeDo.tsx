@@ -54,8 +54,11 @@ const WhatWeDo = ({ whatWeDos = [] }: { whatWeDos: SanityDocument[] }) => {
                   <Image
                     src={imageURL}
                     alt={title}
-                    width={400}
-                    height={200}
+                    // width={1280}
+                    // height={720}
+                    width={1920}
+                    height={1080}
+                    loading="eager"
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                   />
                 </div>

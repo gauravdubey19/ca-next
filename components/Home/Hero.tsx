@@ -136,8 +136,8 @@ export default function Hero() {
         >
           <Image
             src={hero.imageUrl}
-            width={800}
-            height={800}
+            width={1920}
+            height={1080}
             alt={hero.imageAlt}
             loading="lazy"
             className="w-full h-full object-cover"

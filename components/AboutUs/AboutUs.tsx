@@ -65,8 +65,8 @@ const Hero = () => {
           <Image
             src={"/assets/images/aboutUsPage.jpeg"}
             alt="banner"
-            width={1000}
-            height={1000}
+            width={3840}
+            height={2160}
             loading="eager"
             className="w-full h-full object-cover"
           />
@@ -182,8 +182,9 @@ const Business = () => {
         <Image
           src={"/assets/images/hero.jpeg"}
           alt="banner"
-          width={400}
-          height={600}
+          width={1920}
+          height={1080}
+          loading="eager"
           className="w-full h-full object-cover"
         />
       </motion.div>
@@ -350,8 +351,9 @@ const Card: React.FC<CardProps> = ({ card }) => {
             <Image
               src={card.img}
               alt={`Team profile of ${card.name}`}
-              width={400}
-              height={300}
+              width={1920}
+              height={1080}
+              loading="eager"
               className="w-full h-full"
             />
           </div>
@@ -490,8 +492,9 @@ const Success = () => {
               "https://consultia-nextjs.vercel.app/assets/img/about/about22.png"
             }
             alt="banner"
-            width={400}
-            height={600}
+            width={1920}
+            height={1080}
+            loading="eager"
             className="w-full h-full object-cover"
           />
         </div>

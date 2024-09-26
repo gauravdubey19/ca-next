@@ -45,8 +45,11 @@ const Navbar: React.FC<{ appName?: string }> = ({ appName = "LOGO" }) => {
         <Image
           src="/logo.png"
           alt="logo"
-          width={200}
-          height={200}
+          // width={200}
+          // height={200}
+          width={1920}
+          height={1080}
+          loading="eager"
           priority
           className="w-fit h-fit"
         />

@@ -93,8 +93,9 @@ const Posts = ({
                 <Image
                   src={post.imageURL}
                   alt={post.title}
-                  width={350}
-                  height={150}
+                  width={1920}
+                  height={1080}
+                  loading="eager"
                   priority
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3"
                 />
@@ -132,8 +133,9 @@ const Posts = ({
                 <Image
                   src={imageURL}
                   alt={title}
-                  width={400}
-                  height={200}
+                  width={1920}
+                  height={1080}
+                  loading="eager"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>

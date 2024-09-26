@@ -49,8 +49,11 @@ const Article = ({ posts = [] }: { posts: SanityDocument[] }) => {
                 <Image
                   src={article.imageURL}
                   alt={article.title}
-                  width={350}
-                  height={150}
+                  // width={1280}
+                  // height={720}
+                  width={1920}
+                  height={1080}
+                  loading="eager"
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3"
                 />
               </div>

@@ -75,12 +75,13 @@ const Services = () => {
               className="w-fit h-fit group flex flex-col p-6 space-y-4 bg-white/20 backdrop-blur-md rounded-lg shadow-lg md:flex-row md:space-y-0 md:space-x-4 translate-y-1 hover:-translate-y-2 ease-in-out duration-300"
             >
               <div className="flex-shrink-0">
-                <div className="flex items-center justify-center w-16 h-16 bg-green-100 rounded-full">
+                <div className="flex items-center justify-center w-16 h-16 p-3 bg-green-100 rounded-full">
                   <Image
                     src={service.icon}
                     alt={service.title}
-                    width={40}
-                    height={40}
+                    width={200}
+                    height={200}
+                    className="w-full h-full"
                   />
                 </div>
               </div>

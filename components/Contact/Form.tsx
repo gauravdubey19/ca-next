@@ -28,8 +28,9 @@ const ContactForm = () => {
           <Image
             src="/assets/images/contactUs.png"
             alt="Contact Us"
-            width={400}
-            height={400}
+            width={1920}
+            height={1080}
+            loading="eager"
             className="w-fit h-full object-contain"
           />
         </motion.div>
