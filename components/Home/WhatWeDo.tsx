@@ -114,7 +114,7 @@ const WhatWeDo = ({ whatWeDos = [] }: { whatWeDos: SanityDocument[] }) => {
                     <h3 className="text-lg font-bold mb-2 line-clamp-1">
                       {title}
                     </h3>
-                    <p className="text-zinc-200 mb-4 text-sm line-clamp-3">
+                    <p className="w-full text-zinc-200 mb-4 text-sm text-justify text-balance line-clamp-3">
                       {body[0].children[0]?.text}
                     </p>
                     <Link

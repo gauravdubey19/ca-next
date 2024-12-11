@@ -63,12 +63,12 @@ const Hero = () => {
           className="h-full lg:h-[648px] w-full rounded-3xl overflow-hidden"
         >
           <Image
-            src={"/assets/images/aboutUsPage.jpeg"}
+            src={"/assets/images/aboutUsPageBanner.jpg"}
             alt="banner"
             width={3840}
             height={2160}
             loading="eager"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-fill rounded-3xl overflow-hidden"
           />
         </motion.div>
       </section>
@@ -98,7 +98,7 @@ const Story = () => {
             variants={fadeInOut("right", "tween", 0.2, 1)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance text-justify"
           >
             The firm {'"PATEL & GUPTA, Chartered Accountants"'} was incorporated
             in the year 2000 as a partnership firm with four partners, with a
@@ -110,7 +110,7 @@ const Story = () => {
             variants={fadeInOut("left", "tween", 0.2, 1)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance text-justify"
           >
             The firm is also engaged in providing financial assistance from
             banks and FIs by the way of Term Loan, Short-term and long-term
@@ -125,7 +125,7 @@ const Story = () => {
             variants={fadeInOut("right", "tween", 0.2, 1.3)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance text-justify"
           >
             Our firm has also been engaged previously for field audit and
             documentation on behalf of Standard Chartered Bank for their Supply
@@ -136,7 +136,7 @@ const Story = () => {
             variants={fadeInOut("left", "tween", 0.2, 1.3)}
             initial="hidden"
             animate={isInView ? "show" : "exit"}
-            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance"
+            className="w-full h-fit flex-1 text-sm md:text-md lg:text-xl font-thin text-balance text-justify"
           >
             Firm is also engaged in providing financial assistance from banks
             and FIs by the way of Term Loan, Short-term and long-term Working
@@ -176,16 +176,16 @@ const Business = () => {
         variants={fadeInOut("right", "tween", 0.2, 0.5)}
         initial="hidden"
         animate={isInView ? "show" : "exit"}
-        className="w-full h-full md:mt-8 flex-1 rounded-xl overflow-hidden"
+        className="w-full h-full md:mt-8 sticky top-20 flex-1 rounded-xl overflow-hidden"
       >
         {/* sticky top-32 */}
         <Image
-          src={"/assets/images/hero.jpeg"}
+          src={"/assets/images/aboutUsPage.jpg"}
           alt="banner"
           width={1920}
           height={1080}
           loading="eager"
-          className="w-full h-full object-cover"
+          className="w-full h-full lg:h-[65vh] object-cover"
         />
       </motion.div>
       <div className="w-full h-full flex-1 space-y-4 md:space-y-8 lg:space-y-10">
@@ -212,7 +212,7 @@ const Business = () => {
               variants={fadeInOut("left", "tween", 0.2, 1)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
-              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
+              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance text-justify"
             >
               “PATEL & GUPTA, A Chartered Accountants firm was incorporated in
               the year 2000 with four partners. We are a combination of
@@ -223,7 +223,7 @@ const Business = () => {
               variants={fadeInOut("left", "tween", 0.2, 1.2)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
-              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
+              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance text-justify"
             >
               Our vision is to provide quality professional services with
               greater accuracy and transparency through multiple branches spread
@@ -233,7 +233,7 @@ const Business = () => {
               variants={fadeInOut("left", "tween", 0.2, 1.5)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
-              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
+              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance text-justify"
             >
               Our moto is to assist client to become most competitive in the
               market. Our mission is to excel through use of technology and
@@ -243,7 +243,7 @@ const Business = () => {
               variants={fadeInOut("left", "tween", 0.2, 1.8)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
-              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
+              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance text-justify"
             >
               Firm is also engaged in providing financial assistance from the
               bank’s and FI’s by the way of Term Loan, Short term and long term
@@ -256,7 +256,7 @@ const Business = () => {
               variants={fadeInOut("left", "tween", 0.2, 2.1)}
               initial="hidden"
               animate={isInView ? "show" : "exit"}
-              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance"
+              className="w-full h-fit text-sm md:text-md lg:text-xl text-balance text-justify"
             >
               Our firm has also been engaged previously for field audit and
               documentation on behalf of Standard Chartered Bank for their
@@ -353,8 +353,8 @@ const Card: React.FC<CardProps> = ({ card }) => {
               alt={`Team profile of ${card.name}`}
               width={1920}
               height={1080}
-              loading="eager"
-              className="w-full h-full"
+              loading="lazy"
+              className="w-full h-full object-center"
             />
           </div>
           <div className="h-[30%] w-full flex-center flex-col p-2 bg-white rounded-b-xl">
@@ -437,7 +437,7 @@ const ourTeam: CardData[] = [
     name: "C.A. AYUSH GARG",
     description:
       "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
-    img: "/assets/team/ca_ayush_garg.jpeg",
+    img: "/assets/team/ca_ayush_garg.jpg",
     social: [
       {
         id: 1,
@@ -452,7 +452,7 @@ const ourTeam: CardData[] = [
     name: "C.A. GOVINDA SWAMI",
     description:
       "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
-    img: "/assets/team/ca_govinda_swami.jpeg",
+    img: "/assets/team/ca_govinda_swami.jpg",
     social: [
       {
         id: 1,

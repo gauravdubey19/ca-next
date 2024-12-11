@@ -13,11 +13,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { footerData } from "@/lib/data";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
 
+  if(pathname.includes("/studio")) return
   return (
     <div ref={ref} className="flex-between flex-col bg-muted  border-t">
       <div className="container max-w-7xl grid grid-cols-1 md:grid-cols-5 gap-8 px-4 py-6 md:px-16 md:py-10 lg:px-24 lg:py-16">
@@ -34,7 +37,7 @@ export default function Footer() {
               className="w-fit h-fit"
             />
           </Link>
-          <p className="text-muted-foreground text-sm md:text-md text-balance">
+          <p className="text-muted-foreground text-sm md:text-md text-balance text-justify">
             {footerData.companyDescription}
           </p>
         </div>

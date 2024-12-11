@@ -108,7 +108,7 @@ const BlogPostDetail: React.FC<BlogPostDetailProps> = ({ post }) => {
                   initial="hidden"
                   whileInView="show"
                   animate="show"
-                  className="text-lg text-gray-600"
+                  className="text-lg text-gray-600 text-justify"
                 >
                   {p.children[0]?.text}
                 </motion.p>

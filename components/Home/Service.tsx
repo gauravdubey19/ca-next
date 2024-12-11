@@ -61,7 +61,7 @@ const Service = () => {
                 <div className="flex justify-between flex-col">
                   <div className="flex-grow">
                     <h3 className="text-xl font-semibold">{service.title}</h3>
-                    <p className="mt-2 text-zinc-200  line-clamp-3">
+                    <p className="mt-2 text-zinc-200 text-justify line-clamp-3">
                       {service.description}
                     </p>
                   </div>

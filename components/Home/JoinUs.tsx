@@ -46,7 +46,7 @@ export default function JoinUs() {
   return (
     <section
       ref={ref}
-      className="w-full h-[50vh] lg:h-[70vh] flex-center bg-[url(/assets/images/joinUs.jpeg)] bg-cover bg-center bg-no-repeat"
+      className="w-full h-[50vh] lg:h-[70vh] flex-center bg-[url(/assets/images/joinUs.jpg)] bg-cover bg-center bg-no-repeat"
     >
       <div className="w-full h-full grid grid-cols-1 md:grid-cols-2 items-center gap-8 bg-black/60 p-4 md:px-10 lg:px-32 ">
         <div className="space-y-4">

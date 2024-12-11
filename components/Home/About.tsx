@@ -23,7 +23,7 @@ const About = () => {
             className="hidden md:flex relative w-[35%] h-full rounded-xl overflow-hidden"
           >
             <Image
-              src="/assets/images/about.jpeg"
+              src="/assets/images/about.jpg"
               alt={"img"}
               width={1920}
               height={1080}
@@ -32,7 +32,7 @@ const About = () => {
               className="w-full h-[100vh] object-cover"
             />
           </motion.div>
-          <div className="w-full h-full md:w-[45%] space-y-4 p-2 md:px-8 md:py-6">
+          <div className="w-full h-full md:w-[45%] lg:w-[50%] space-y-4 p-2 md:px-8 md:py-6">
             <motion.p
               variants={fadeInOut("left", "tween", 0.2, 0.5)}
               initial="hidden"
@@ -42,7 +42,7 @@ const About = () => {
               <PiHandshakeLight size={20} className="mr-1" /> We Are Here For
               Your Tax Relief.
             </motion.p>
-            <div className="w-fit space-y-6">
+            <div className="w-full space-y-6">
               <motion.h1
                 variants={fadeInOut("left", "tween", 0.2, 0.8)}
                 initial="hidden"
@@ -55,7 +55,7 @@ const About = () => {
                 variants={fadeInOut("left", "tween", 0.2, 1)}
                 initial="hidden"
                 animate={isInView ? "show" : "exit"}
-                className="max-w-[600px] text-lg text-gray-700 md:text-xl lg:text-lg xl:text-xl font-light"
+                className="max-w-[600px] xl:max-w-[700px] text-lg text-gray-700 md:text-xl lg:text-lg xl:text-xl font-light text-justify"
               >
                 The firm{" "}
                 <b className="font-semibold">
@@ -70,7 +70,7 @@ const About = () => {
                 variants={fadeInOut("left", "tween", 0.2, 1.3)}
                 initial="hidden"
                 animate={isInView ? "show" : "exit"}
-                className="max-w-[600px] text-lg text-gray-700 md:text-xl lg:text-lg xl:text-xl font-light"
+                className="max-w-[600px] xl:max-w-[700px] text-lg text-gray-700 md:text-xl lg:text-lg xl:text-xl font-light text-justify"
               >
                 Our firm is engaged in providing financial assistance from the
                 banks and financial institutions by way of Term Loans, Short
@@ -83,7 +83,7 @@ const About = () => {
                 variants={fadeInOut("left", "tween", 0.2, 1.5)}
                 initial="hidden"
                 animate={isInView ? "show" : "exit"}
-                className="max-w-[600px] text-lg text-gray-700 md:text-xl lg:text-lg xl:text-xl font-light"
+                className="max-w-[600px] xl:max-w-[700px] text-lg text-gray-700 md:text-xl lg:text-lg xl:text-xl font-light text-justify"
               >
                 We have also been engaged previously for field audits and
                 documentation on behalf of Standard Chartered Bank for their

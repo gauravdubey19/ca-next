@@ -77,7 +77,7 @@ export default function Hero() {
               initial="hidden"
               whileInView="show"
               animate="show"
-              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-gray-950"
+              className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-gray-950 text-balance"
             >
               We are a combination of
             </motion.h2>
@@ -86,7 +86,7 @@ export default function Hero() {
               initial="hidden"
               whileInView="show"
               animate="show"
-              className="max-w-[600px] text-gray-700 text-lg md:text-md lg:text-lg xl:text-xl font-light"
+              className="max-w-[600px] text-gray-700 text-lg md:text-md lg:text-lg xl:text-xl font-light text-justify"
             >
               Qualified and Experienced Professionals to cater to the needs of
               high-tech professional services.
@@ -96,7 +96,7 @@ export default function Hero() {
               initial="hidden"
               whileInView="show"
               animate="show"
-              className="max-w-[600px] text-gray-700 text-lg md:text-md lg:text-lg xl:text-xl font-light"
+              className="max-w-[600px] text-gray-700 text-lg md:text-md lg:text-lg xl:text-xl font-light text-justify"
             >
               Our motto is to assist clients to become the most competitive in
               the market. Our mission is to excel through the use of technology
@@ -132,14 +132,14 @@ export default function Hero() {
           initial="hidden"
           whileInView="show"
           animate="show"
-          className="hidden lg:flex z-30 relative w-[50%] h-full rounded-xl overflow-hidden"
+          className="hidden lg:flex z-30 relative w-[60%] h-full rounded-xl overflow-hidden"
         >
           <Image
             src={hero.imageUrl}
             width={1920}
             height={1080}
             alt={hero.imageAlt}
-            loading="lazy"
+            loading="eager"
             className="w-full h-full object-cover"
           />
           {/* <div className="absolute top-0 right-2 w-fit h-fit">
@@ -177,6 +177,6 @@ export default function Hero() {
 }
 
 const hero = {
-  imageUrl: "/assets/images/hero.jpeg",
+  imageUrl: "/assets/images/hero.jpg",
   imageAlt: "Professionals in a discussion",
 };

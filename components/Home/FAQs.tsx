@@ -54,7 +54,7 @@ const FAQs: React.FC = () => {
                 <AccordionTrigger className="w-full text-lg md:text-xl font-medium text-start">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="w-full text-md md:text-lg">
+                <AccordionContent className="w-full text-md md:text-lg text-justify">
                   {item.answer}
                 </AccordionContent>
               </AccordionItem>
