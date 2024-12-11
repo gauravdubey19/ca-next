@@ -20,7 +20,7 @@ export default function Footer() {
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
 
-  if(pathname.includes("/studio")) return
+  if (pathname.includes("/studio")) return;
   return (
     <div ref={ref} className="flex-between flex-col bg-muted  border-t">
       <div className="container max-w-7xl grid grid-cols-1 md:grid-cols-5 gap-8 px-4 py-6 md:px-16 md:py-10 lg:px-24 lg:py-16">
