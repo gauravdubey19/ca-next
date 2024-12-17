@@ -337,7 +337,7 @@ const Card: React.FC<CardProps> = ({ card }) => {
 
   return (
     <div
-      className="relative w-full h-[300px] md:h-[350px] lg:h-[400px] perspective"
+      className="relative w-full aspect-[9/16] perspective"
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
@@ -347,23 +347,23 @@ const Card: React.FC<CardProps> = ({ card }) => {
         }`}
       >
         <motion.div className="absolute w-full h-full backface-hidden">
-          <div className="h-[70%] w-full rounded-t-xl overflow-hidden">
+          <div className="h-[85%] w-full rounded-t-xl overflow-hidden">
             <Image
               src={card.img}
               alt={`Team profile of ${card.name}`}
               width={1920}
               height={1080}
               loading="lazy"
-              className="w-full h-full object-center"
+              className="w-full h-full object-cover"
             />
           </div>
-          <div className="h-[30%] w-full flex-center flex-col p-2 bg-white rounded-b-xl">
-            <h3 className="text-md md:text-lg text-center font-bold">
+          <div className="h-[15%] w-full flex-center flex-col p-2 bg-white rounded-b-xl">
+            <h3 className="text-sm md:text-md text-center font-bold">
               {card.name}
             </h3>
           </div>
         </motion.div>
-        <motion.div className="absolute w-full h-full bg-[#E7E8F4] text-sm md:text-md lg:text-lg text-center flex-center flex-col p-4 rounded-xl backface-hidden rotateY-180">
+        <motion.div className="absolute w-full h-full bg-[#E7E8F4] text-sm lg:text-md text-center flex-center flex-col p-4 rounded-xl backface-hidden rotateY-180">
           <p className="mb-4">{card.description}</p>
           <div className="flex flex-wrap gap-6 md:gap-4 lg:gap-2">
             <AnimatedTooltip items={card.social} />
