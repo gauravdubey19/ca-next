@@ -449,7 +449,7 @@ const ourTeam: CardData[] = [
   },
   {
     id: 5,
-    name: "C.A. GOVINDA SWAMI",
+    name: "C.A. GOVINDA SOMANI",
     description:
       "Use this paragraph to describe what you do. This is a great place to let your visitors know who you are.",
     img: "/assets/team/ca_govinda_swami.jpg",

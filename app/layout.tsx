@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import { Arimo } from "next/font/google";
+import { Toaster } from "@/components/ui/toaster";
 import Navbar from "@/components/Navbar/Navbar";
-import "./globals.css";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ui/ScrollToTop";
-import { Toaster } from "@/components/ui/toaster";
+import "./globals.css";
 
 const arimo = Arimo({
-  subsets: ["latin"],
-  weight: "400",
+  subsets: ["latin", "cyrillic", "greek", "hebrew", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-arimo",
 });
 
 export const metadata: Metadata = {
